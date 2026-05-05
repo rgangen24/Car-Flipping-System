@@ -33,8 +33,8 @@ async def serve_index():
     with open("index.html", "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read())
 
-@app.post("/api/analyze-image")
-async def analyze_image(file: UploadFile = File(...)):
+@app.post("/api/analyze-vehicle")
+async def analyze_vehicle(file: UploadFile = File(...)):
     # Fallback to simulation if no API key is provided
     if not API_KEY or not HAS_GENAI:
         import random

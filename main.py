@@ -96,6 +96,13 @@ async def analyze_vehicle(file: UploadFile = File(...)):
             return {"success": False, "error": f"Failed to parse AI output: {response.text}"}
             
     except Exception as e:
-        return {"success": False, "error": str(e)}
+        error_msg = str(e)
+        if "404" in error_msg:
+            try:
+                models = [m.name for m in genai.list_models()]
+                error_msg += f" | Available models: {', '.join(models)}"
+            except:
+                pass
+        return {"success": False, "error": error_msg}
     finally:
         os.remove(temp_path)

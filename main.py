@@ -188,14 +188,13 @@ async def analyze_vehicle(
         prompt = """
         You are APEX, a Cape Town car salvage expert. Examine these car auction photos (Interior and Exterior).
         
-        1. Detect damage types: bumper-rep, frontend-rep, paint-rep, airbags-rep.
-        2. Provide a 'Pro Strategy' insight. 
-           - Look for warning lights on the dashboard.
-           - Check for severe structural bends in the engine bay.
-           - Note if the interior looks abused or well-kept.
+        TASK:
+        1. Identify damages: bumper-rep, frontend-rep, paint-rep, airbags-rep. Be aggressive—if a panel looks slightly off or a light is cracked, flag it.
+        2. Estimate the 'Clean Market Retail' value (ARV) in ZAR for this car assuming it was in perfect condition in South Africa.
+        3. Provide a 'Pro Strategy' insight. Mention warning lights, engine bay issues, or interior condition.
         
         Return raw JSON:
-        {"damages": ["..."], "insight": "..."}
+        {"damages": ["..."], "market_retail": 120000, "insight": "..."}
         """
         
         response = model.generate_content([*vision_files, prompt])
@@ -205,7 +204,12 @@ async def analyze_vehicle(
             # Clean possible markdown block
             raw_text = response.text.replace("```json", "").replace("```", "").strip()
             data = json.loads(raw_text)
-            return {"success": True, "damages": data.get("damages", []), "insight": data.get("insight", "")}
+            return {
+                "success": True, 
+                "damages": data.get("damages", []), 
+                "market_retail": data.get("market_retail", 0),
+                "insight": data.get("insight", "")
+            }
         except Exception as e:
             return {"success": False, "error": f"Failed to parse AI output: {response.text}"}
             
@@ -219,4 +223,5 @@ async def analyze_vehicle(
                 pass
         return {"success": False, "error": error_msg}
     finally:
-        os.remove(temp_path)
+        for p in temp_paths:
+            if os.path.exists(p): os.remove(p)

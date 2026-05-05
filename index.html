@@ -505,7 +505,7 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <h1>APEX v1.2.1</h1>
+                <h1>APEX v1.2.2</h1>
                 <p>Personal Car Auction Intelligence System for Rishen | Cape Town</p>
             </div>
             <div class="currency-badge">ZAR / South Africa</div>
@@ -620,6 +620,7 @@
                 <div class="ai-vision-results" id="ai-results" style="display: none;">
                     <div style="font-size: 1.5rem;">✅</div>
                     <p style="font-weight: 600; color: var(--accent-green);">Analysis Complete</p>
+                    <div id="ai-image-tray" style="display: flex; gap: 5px; overflow-x: auto; padding: 10px 0; max-width: 100%;"></div>
                     <p style="font-size: 0.85rem; color: var(--text-muted);" id="ai-findings-text"></p>
                     <button class="reset-btn" onclick="resetAIVision(event)">Reset</button>
                 </div>
@@ -1181,6 +1182,15 @@
                 aiResults.style.display = 'flex';
 
                 if (data.success) {
+                    // Update Retail Value if AI provided it
+                    if (data.market_retail > 0) {
+                        document.getElementById('clean-arv').value = data.market_retail;
+                    }
+
+                    // Show images being processed
+                    const tray = document.getElementById('ai-image-tray');
+                    tray.innerHTML = imageUrls.slice(0, 5).map(url => `<img src="${url}" style="height: 60px; border-radius: 4px; border: 1px solid var(--border);">`).join('');
+
                     data.damages.forEach(id => {
                         const cb = document.getElementById(id);
                         if (cb) {

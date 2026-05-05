@@ -1,3 +1,4 @@
+# APEX Auction Intelligence System - v1.0.1
 import os
 import tempfile
 import json

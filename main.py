@@ -9,6 +9,7 @@ from pydantic import BaseModel
 import httpx
 from bs4 import BeautifulSoup
 import re
+from typing import List, Optional
 
 # Optional Generative AI integration
 try:
@@ -67,18 +68,58 @@ async def fetch_auction_data(data: AuctionURL):
             
             # Remove year from model name
             model_name = title.replace(str(year), "").strip() if year_match else title
+
+            # Extract Odometer, Start Status, Keys
+            specs = {}
+            details_table = soup.select_one('table.vehicle.details')
+            if details_table:
+                for row in details_table.find_all('tr'):
+                    cols = row.find_all('td')
+                    if len(cols) >= 2:
+                        key = cols[0].text.strip().lower()
+                        val = cols[1].text.strip()
+                        specs[key] = val
+
+            props_table = soup.select_one('table.vehicle-properties')
+            if props_table:
+                for row in props_table.find_all('tr'):
+                    cols = row.find_all('td')
+                    if len(cols) >= 2:
+                        key = cols[0].text.strip().lower()
+                        val = cols[1].text.strip()
+                        specs[key] = val
+
+            # Extract Images (360 and Slider)
+            image_urls = []
+            for img in soup.select('li img.current-image, .slick-slide:not(.slick-cloned) img'):
+                src = img.get('src') or img.get('data-src')
+                if src and src.startswith('http'):
+                    if src not in image_urls: image_urls.append(src)
+            
+            # Limit to top 10 for AI analysis
+            analysis_images = image_urls[:10]
             
             return {
                 "success": True,
                 "model": model_name,
-                "year": year
+                "year": year,
+                "odometer": specs.get('odometer', 'Unknown'),
+                "starts": specs.get('starts', 'Unknown'),
+                "has_keys": specs.get('keys', 'Unknown'),
+                "image_urls": analysis_images
             }
     except Exception as e:
         return {"success": False, "error": str(e)}
 
+class AnalysisRequest(BaseModel):
+    image_urls: Optional[List[str]] = None
+
 @app.post("/api/analyze-vehicle")
-async def analyze_vehicle(file: UploadFile = File(...)):
-    print("DEBUG: Handling analyze-vehicle request with Gemini 2.0")
+async def analyze_vehicle(
+    file: Optional[UploadFile] = File(None),
+    request_data: Optional[AnalysisRequest] = Body(None)
+):
+    print("DEBUG: Handling analyze-vehicle request")
     # Fallback to simulation if no API key is provided
     if not API_KEY or not HAS_GENAI:
         import random
@@ -92,15 +133,32 @@ async def analyze_vehicle(file: UploadFile = File(...)):
             "insight": "[SIMULATION MODE] Set GEMINI_API_KEY in your environment for real AI analysis."
         }
 
-    # Save temp file
-    suffix = os.path.splitext(file.filename)[1]
-    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as temp:
-        temp.write(await file.read())
-        temp_path = temp.name
+    # Save temp files
+    temp_paths = []
+    
+    if file:
+        suffix = os.path.splitext(file.filename)[1]
+        with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as temp:
+            temp.write(await file.read())
+            temp_paths.append(temp.name)
+    elif request_data and request_data.image_urls:
+        async with httpx.AsyncClient() as client:
+            for url in request_data.image_urls[:5]: # Analyze top 5 images for speed/quota
+                try:
+                    img_resp = await client.get(url, timeout=5.0)
+                    if img_resp.status_code == 200:
+                        with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as temp:
+                            temp.write(img_resp.content)
+                            temp_paths.append(temp.name)
+                except:
+                    continue
+
+    if not temp_paths:
+        return {"success": False, "error": "No images provided for analysis"}
 
     try:
         # Upload to Gemini
-        vision_file = genai.upload_file(temp_path)
+        vision_files = [genai.upload_file(p) for p in temp_paths]
         
         # Use the correct 2026-era model name found via diagnostics
         try:
@@ -108,31 +166,21 @@ async def analyze_vehicle(file: UploadFile = File(...)):
         except:
             model = genai.GenerativeModel('gemini-2.5-flash')
         
-        
         prompt = """
-        You are APEX, a Cape Town car salvage expert with 20 years of experience in the Wingfield and Aucor auction circuits. 
-        Examine this car auction photo carefully.
+        You are APEX, a Cape Town car salvage expert. Examine these car auction photos (Interior and Exterior).
         
-        1. Detect specific damage types from this list:
-           - bumper-rep (Bumper damage)
-           - frontend-rep (Front-end impact, radiator/grill)
-           - paint-rep (Paint scratches, minor panel dents)
-           - airbags-rep (Airbags deployed inside)
+        1. Detect damage types: bumper-rep, frontend-rep, paint-rep, airbags-rep.
+        2. Provide a 'Pro Strategy' insight. 
+           - Look for warning lights on the dashboard.
+           - Check for severe structural bends in the engine bay.
+           - Note if the interior looks abused or well-kept.
         
-        2. Provide a 'Pro Strategy' insight. Mention things like:
-           - If it's a front-end hit, warn about hidden radiator/intercooler costs.
-           - If it's a VW/Audi, mention common clip breakages.
-           - If it looks like a cheap previous repair, point it out.
-        
-        Return ONLY a raw JSON object (no markdown, no codeblocks):
-        {
-            "damages": ["bumper-rep", "paint-rep"], 
-            "insight": "Expert observation about the damage severity or hidden risks."
-        }
+        Return raw JSON:
+        {"damages": ["..."], "insight": "..."}
         """
         
-        response = model.generate_content([vision_file, prompt])
-        genai.delete_file(vision_file.name)
+        response = model.generate_content([*vision_files, prompt])
+        for f in vision_files: genai.delete_file(f.name)
         
         try:
             # Clean possible markdown block

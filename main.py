@@ -2,9 +2,13 @@
 import os
 import tempfile
 import json
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Body
 from fastapi.responses import HTMLResponse
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+import httpx
+from bs4 import BeautifulSoup
+import re
 
 # Optional Generative AI integration
 try:
@@ -32,6 +36,45 @@ if HAS_GENAI and API_KEY:
 async def serve_index():
     with open("index.html", "r", encoding="utf-8") as f:
         return HTMLResponse(content=f.read())
+
+class AuctionURL(BaseModel):
+    url: str
+
+@app.post("/api/fetch-auction-data")
+async def fetch_auction_data(data: AuctionURL):
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.get(data.url, timeout=10.0)
+            if response.status_code != 200:
+                return {"success": False, "error": "Could not reach website"}
+            
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # Auction Nation usually puts the car title in <h1> or specific meta tags
+            title = ""
+            h1 = soup.find('h1')
+            if h1:
+                title = h1.text.strip()
+            else:
+                title_tag = soup.find('title')
+                if title_tag:
+                    title = title_tag.text.strip()
+
+            # Clean title and extract year
+            # Example: "2018 VW POLO VIVO 1.4 TRENDLINE"
+            year_match = re.search(r'\b(20\d{2}|19\d{2})\b', title)
+            year = int(year_match.group(0)) if year_match else 2018
+            
+            # Remove year from model name
+            model_name = title.replace(str(year), "").strip() if year_match else title
+            
+            return {
+                "success": True,
+                "model": model_name,
+                "year": year
+            }
+    except Exception as e:
+        return {"success": False, "error": str(e)}
 
 @app.post("/api/analyze-vehicle")
 async def analyze_vehicle(file: UploadFile = File(...)):

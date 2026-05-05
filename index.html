@@ -505,7 +505,7 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <h1>APEX v1.0.5</h1>
+                <h1>APEX v1.1.0</h1>
                 <p>Personal Car Auction Intelligence System for Rishen | Cape Town</p>
             </div>
             <div class="currency-badge">ZAR / South Africa</div>
@@ -526,6 +526,14 @@
         <!-- LEFT COLUMN: Inputs -->
         <main class="panel">
             <div class="panel-heading">🚨 Phase A: Vehicle & Threat Identity</div>
+            <div class="input-group">
+                <label for="auction-url">Import from Auction Nation (URL)</label>
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="auction-url" placeholder="Paste Auction Nation link here..." style="flex: 1;">
+                    <button onclick="fetchAuctionData()" class="btn" style="padding: 0 15px; background: var(--accent-blue);">Import</button>
+                </div>
+            </div>
+
             <div class="input-group">
                 <label for="car-model">Model / Spec / Make</label>
                 <input type="text" id="car-model" list="car-models" placeholder="e.g. VW Polo, Ford Ranger 2.2, BMW M3..." autocomplete="off">
@@ -573,6 +581,7 @@
                         <option value="smd">SMD (8% Comm + R2.5k Fee)</option>
                         <option value="aucor">Aucor (10% Comm + R3k Fee)</option>
                         <option value="burchmores">Burchmores (7% Comm + R2.5k Fee)</option>
+                        <option value="auction-nation">Auction Nation (5% Comm + R1.5k Fee)</option>
                         <option value="custom">Custom (15% All-in)</option>
                     </select>
                 </div>
@@ -849,6 +858,7 @@
             let adminFee = 2500;
             if (auctionHouse === 'aucor') { commRate = 0.10; adminFee = 3000; }
             if (auctionHouse === 'burchmores') { commRate = 0.07; adminFee = 2500; }
+            if (auctionHouse === 'auction-nation') { commRate = 0.05; adminFee = 1500; }
             if (auctionHouse === 'custom') { commRate = 0.15; adminFee = 0; }
 
             // Calculate Adjusted Retail Value (ARV) after history reduction & resale speed
@@ -1098,6 +1108,40 @@
             history = history.slice(0, 5); // Keep last 5
             localStorage.setItem('apex_history', JSON.stringify(history));
             renderHistory();
+        }
+
+        async function fetchAuctionData() {
+            const url = document.getElementById('auction-url').value;
+            if (!url) return;
+            
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = '...';
+            btn.disabled = true;
+
+            try {
+                const response = await fetch('/api/fetch-auction-data', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url })
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('car-model').value = data.model || '';
+                    document.getElementById('car-year').value = data.year || 2018;
+                    document.getElementById('auction-house').value = 'auction-nation';
+                    recalculate();
+                    alert("Data imported successfully from Auction Nation!");
+                } else {
+                    alert("Could not extract data from this URL. Please enter manually.");
+                }
+            } catch (err) {
+                alert("Connection error while importing.");
+            } finally {
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
         }
 
         function renderHistory() {

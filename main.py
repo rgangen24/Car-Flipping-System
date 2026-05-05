@@ -57,8 +57,8 @@ async def analyze_image(file: UploadFile = File(...)):
         # Upload to Gemini
         vision_file = genai.upload_file(temp_path)
         
-        # Use Gemini 1.5 Flash for fast vision tasks
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        # Use Gemini 2.0 Flash for fast vision tasks
+        model = genai.GenerativeModel('gemini-2.0-flash')
         
         prompt = """
         You are APEX, a Cape Town car salvage expert with 20 years of experience in the Wingfield and Aucor auction circuits. 

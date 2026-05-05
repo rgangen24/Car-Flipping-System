@@ -35,6 +35,7 @@ async def serve_index():
 
 @app.post("/api/analyze-vehicle")
 async def analyze_vehicle(file: UploadFile = File(...)):
+    print("DEBUG: Handling analyze-vehicle request with Gemini 2.0")
     # Fallback to simulation if no API key is provided
     if not API_KEY or not HAS_GENAI:
         import random

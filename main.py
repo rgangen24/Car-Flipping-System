@@ -51,46 +51,60 @@ async def fetch_auction_data(data: AuctionURL):
             
             soup = BeautifulSoup(response.text, 'html.parser')
             
-            # Auction Nation usually puts the car title in <h1> or specific meta tags
-            title = ""
-            h1 = soup.find('h1')
-            if h1:
-                title = h1.text.strip()
-            else:
-                title_tag = soup.find('title')
-                if title_tag:
-                    title = title_tag.text.strip()
-
-            # Clean title and extract year
-            # Example: "2018 VW POLO VIVO 1.4 TRENDLINE"
-            year_match = re.search(r'\b(20\d{2}|19\d{2})\b', title)
-            year = int(year_match.group(0)) if year_match else 2018
+            # PRECISION EXTRACTION: Using exact Auction Nation IDs
+            title = "Unknown Car"
+            title_tag = soup.find(id='vehTitle')
+            if title_tag:
+                title = title_tag.text.strip()
             
-            # Remove year from model name
-            model_name = title.replace(str(year), "").strip() if year_match else title
+            # Clean title and extract year
+            year = 2018
+            year_tag = soup.find(id='vehYear')
+            if year_tag:
+                try:
+                    year = int(year_tag.text.strip())
+                except:
+                    year_match = re.search(r'\b(20\d{2}|19\d{2})\b', title)
+                    year = int(year_match.group(0)) if year_match else 2018
+            else:
+                year_match = re.search(r'\b(20\d{2}|19\d{2})\b', title)
+                year = int(year_match.group(0)) if year_match else 2018
 
-            # Extract Odometer, Start Status, Keys from listing-details
+            # Remove year from model name
+            model_name = title.replace(str(year), "").strip() if title else "Unknown Car"
+            if not model_name or model_name.lower() == 'vehicles':
+                model_name = title
+
+            # Extract Odometer, Status, Code using IDs
             specs = {}
-            listing_details = soup.select_one('.listing-details, .vehicle-details')
-            if listing_details:
-                # Find all items that might contain labels and values
-                items = listing_details.find_all(['b', 'div', 'li', 'span'])
-                for item in items:
-                    text = item.text.strip().lower()
-                    # Check for icons (text-success means Yes)
-                    has_check = item.find('i', class_='text-success') is not None
-                    
-                    if 'odometer' in text or 'mileage' in text:
-                        # Extract the next text node or sibling
-                        val = item.next_sibling if item.next_sibling else ""
-                        specs['odometer'] = str(val).strip().replace(":", "") or text.split(':')[-1].strip()
-                    if 'starts' in text:
-                        specs['starts'] = "YES" if has_check else "NO"
-                    if 'keys' in text:
-                        specs['keys'] = "YES" if has_check else "NO"
-                    if 'code' in text:
-                        val = item.next_sibling if item.next_sibling else ""
-                        specs['code'] = str(val).strip().replace(":", "") or text.split(':')[-1].strip()
+            odo_tag = soup.find(id='vehOdo')
+            if odo_tag: specs['odometer'] = odo_tag.text.strip()
+            
+            starts_tag = soup.find(id='vehStarts')
+            if starts_tag: specs['starts'] = "YES" if 'check' in str(starts_tag).lower() or 'yes' in starts_tag.text.lower() else "NO"
+            
+            keys_tag = soup.find(id='vehKeys')
+            if keys_tag: specs['keys'] = "YES" if 'check' in str(keys_tag).lower() or 'yes' in keys_tag.text.lower() else "NO"
+            
+            code_tag = soup.find(id='vehCode')
+            if code_tag: specs['code'] = code_tag.text.strip()
+
+            # Fallback to broad scan if IDs failed
+            if not specs.get('odometer'):
+                listing_details = soup.select_one('.listing-details, .vehicle-details')
+                if listing_details:
+                    items = listing_details.find_all(['b', 'div', 'li', 'span'])
+                    for item in items:
+                        text = item.text.strip().lower()
+                        has_check = item.find('i', class_='text-success') is not None
+                        if 'odometer' in text or 'mileage' in text:
+                            val = item.next_sibling if item.next_sibling else ""
+                            specs['odometer'] = str(val).strip().replace(":", "") or text.split(':')[-1].strip()
+                        if 'starts' in text: specs['starts'] = "YES" if has_check else "NO"
+                        if 'keys' in text: specs['keys'] = "YES" if has_check else "NO"
+                        if 'code' in text:
+                            val = item.next_sibling if item.next_sibling else ""
+                            specs['code'] = str(val).strip().replace(":", "") or text.split(':')[-1].strip()
 
             # Extract Images (Deep Scan)
             image_urls = []

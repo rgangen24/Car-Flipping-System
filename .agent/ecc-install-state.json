@@ -1,0 +1,2858 @@
+{
+  "schemaVersion": "ecc.install.v1",
+  "installedAt": "2026-04-16T09:03:30.605Z",
+  "target": {
+    "id": "antigravity-project",
+    "target": "antigravity",
+    "kind": "project",
+    "root": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent",
+    "installStatePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\ecc-install-state.json"
+  },
+  "request": {
+    "profile": null,
+    "modules": [],
+    "includeComponents": [],
+    "excludeComponents": [],
+    "legacyLanguages": [
+      "python",
+      "javascript",
+      "typescript"
+    ],
+    "legacyMode": true
+  },
+  "resolution": {
+    "selectedModules": [
+      "rules-core",
+      "agents-core",
+      "commands-core"
+    ],
+    "skippedModules": []
+  },
+  "source": {
+    "repoVersion": "1.10.0",
+    "repoCommit": "1a50145d39c0fa415311da62e7a018edd4e6d976",
+    "manifestVersion": 1
+  },
+  "operations": [
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\agents.md",
+      "sourceRelativePath": "rules/common/agents.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-agents.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\code-review.md",
+      "sourceRelativePath": "rules/common/code-review.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-code-review.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\coding-style.md",
+      "sourceRelativePath": "rules/common/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\development-workflow.md",
+      "sourceRelativePath": "rules/common/development-workflow.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-development-workflow.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\git-workflow.md",
+      "sourceRelativePath": "rules/common/git-workflow.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-git-workflow.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\hooks.md",
+      "sourceRelativePath": "rules/common/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\patterns.md",
+      "sourceRelativePath": "rules/common/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\performance.md",
+      "sourceRelativePath": "rules/common/performance.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-performance.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\security.md",
+      "sourceRelativePath": "rules/common/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\common\\testing.md",
+      "sourceRelativePath": "rules/common/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\common-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\cpp\\coding-style.md",
+      "sourceRelativePath": "rules/cpp/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\cpp-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\cpp\\hooks.md",
+      "sourceRelativePath": "rules/cpp/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\cpp-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\cpp\\patterns.md",
+      "sourceRelativePath": "rules/cpp/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\cpp-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\cpp\\security.md",
+      "sourceRelativePath": "rules/cpp/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\cpp-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\cpp\\testing.md",
+      "sourceRelativePath": "rules/cpp/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\cpp-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\csharp\\coding-style.md",
+      "sourceRelativePath": "rules/csharp/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\csharp-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\csharp\\hooks.md",
+      "sourceRelativePath": "rules/csharp/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\csharp-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\csharp\\patterns.md",
+      "sourceRelativePath": "rules/csharp/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\csharp-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\csharp\\security.md",
+      "sourceRelativePath": "rules/csharp/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\csharp-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\csharp\\testing.md",
+      "sourceRelativePath": "rules/csharp/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\csharp-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\dart\\coding-style.md",
+      "sourceRelativePath": "rules/dart/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\dart-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\dart\\hooks.md",
+      "sourceRelativePath": "rules/dart/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\dart-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\dart\\patterns.md",
+      "sourceRelativePath": "rules/dart/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\dart-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\dart\\security.md",
+      "sourceRelativePath": "rules/dart/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\dart-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\dart\\testing.md",
+      "sourceRelativePath": "rules/dart/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\dart-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\golang\\coding-style.md",
+      "sourceRelativePath": "rules/golang/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\golang-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\golang\\hooks.md",
+      "sourceRelativePath": "rules/golang/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\golang-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\golang\\patterns.md",
+      "sourceRelativePath": "rules/golang/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\golang-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\golang\\security.md",
+      "sourceRelativePath": "rules/golang/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\golang-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\golang\\testing.md",
+      "sourceRelativePath": "rules/golang/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\golang-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\java\\coding-style.md",
+      "sourceRelativePath": "rules/java/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\java-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\java\\hooks.md",
+      "sourceRelativePath": "rules/java/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\java-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\java\\patterns.md",
+      "sourceRelativePath": "rules/java/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\java-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\java\\security.md",
+      "sourceRelativePath": "rules/java/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\java-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\java\\testing.md",
+      "sourceRelativePath": "rules/java/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\java-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\kotlin\\coding-style.md",
+      "sourceRelativePath": "rules/kotlin/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\kotlin-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\kotlin\\hooks.md",
+      "sourceRelativePath": "rules/kotlin/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\kotlin-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\kotlin\\patterns.md",
+      "sourceRelativePath": "rules/kotlin/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\kotlin-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\kotlin\\security.md",
+      "sourceRelativePath": "rules/kotlin/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\kotlin-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\kotlin\\testing.md",
+      "sourceRelativePath": "rules/kotlin/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\kotlin-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\perl\\coding-style.md",
+      "sourceRelativePath": "rules/perl/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\perl-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\perl\\hooks.md",
+      "sourceRelativePath": "rules/perl/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\perl-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\perl\\patterns.md",
+      "sourceRelativePath": "rules/perl/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\perl-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\perl\\security.md",
+      "sourceRelativePath": "rules/perl/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\perl-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\perl\\testing.md",
+      "sourceRelativePath": "rules/perl/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\perl-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\php\\coding-style.md",
+      "sourceRelativePath": "rules/php/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\php-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\php\\hooks.md",
+      "sourceRelativePath": "rules/php/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\php-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\php\\patterns.md",
+      "sourceRelativePath": "rules/php/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\php-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\php\\security.md",
+      "sourceRelativePath": "rules/php/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\php-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\php\\testing.md",
+      "sourceRelativePath": "rules/php/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\php-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\python\\coding-style.md",
+      "sourceRelativePath": "rules/python/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\python-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\python\\hooks.md",
+      "sourceRelativePath": "rules/python/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\python-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\python\\patterns.md",
+      "sourceRelativePath": "rules/python/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\python-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\python\\security.md",
+      "sourceRelativePath": "rules/python/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\python-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\python\\testing.md",
+      "sourceRelativePath": "rules/python/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\python-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\README.md",
+      "sourceRelativePath": "rules/README.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\README.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\rust\\coding-style.md",
+      "sourceRelativePath": "rules/rust/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\rust-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\rust\\hooks.md",
+      "sourceRelativePath": "rules/rust/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\rust-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\rust\\patterns.md",
+      "sourceRelativePath": "rules/rust/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\rust-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\rust\\security.md",
+      "sourceRelativePath": "rules/rust/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\rust-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\rust\\testing.md",
+      "sourceRelativePath": "rules/rust/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\rust-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\swift\\coding-style.md",
+      "sourceRelativePath": "rules/swift/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\swift-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\swift\\hooks.md",
+      "sourceRelativePath": "rules/swift/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\swift-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\swift\\patterns.md",
+      "sourceRelativePath": "rules/swift/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\swift-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\swift\\security.md",
+      "sourceRelativePath": "rules/swift/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\swift-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\swift\\testing.md",
+      "sourceRelativePath": "rules/swift/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\swift-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\typescript\\coding-style.md",
+      "sourceRelativePath": "rules/typescript/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\typescript-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\typescript\\hooks.md",
+      "sourceRelativePath": "rules/typescript/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\typescript-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\typescript\\patterns.md",
+      "sourceRelativePath": "rules/typescript/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\typescript-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\typescript\\security.md",
+      "sourceRelativePath": "rules/typescript/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\typescript-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\typescript\\testing.md",
+      "sourceRelativePath": "rules/typescript/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\typescript-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\web\\coding-style.md",
+      "sourceRelativePath": "rules/web/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\web-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\web\\design-quality.md",
+      "sourceRelativePath": "rules/web/design-quality.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\web-design-quality.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\web\\hooks.md",
+      "sourceRelativePath": "rules/web/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\web-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\web\\patterns.md",
+      "sourceRelativePath": "rules/web/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\web-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\web\\performance.md",
+      "sourceRelativePath": "rules/web/performance.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\web-performance.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\web\\security.md",
+      "sourceRelativePath": "rules/web/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\web-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\web\\testing.md",
+      "sourceRelativePath": "rules/web/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\web-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\agents.md",
+      "sourceRelativePath": "rules/zh/agents.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-agents.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\code-review.md",
+      "sourceRelativePath": "rules/zh/code-review.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-code-review.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\coding-style.md",
+      "sourceRelativePath": "rules/zh/coding-style.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-coding-style.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\development-workflow.md",
+      "sourceRelativePath": "rules/zh/development-workflow.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-development-workflow.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\git-workflow.md",
+      "sourceRelativePath": "rules/zh/git-workflow.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-git-workflow.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\hooks.md",
+      "sourceRelativePath": "rules/zh/hooks.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-hooks.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\patterns.md",
+      "sourceRelativePath": "rules/zh/patterns.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-patterns.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\performance.md",
+      "sourceRelativePath": "rules/zh/performance.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-performance.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\README.md",
+      "sourceRelativePath": "rules/zh/README.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-README.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\security.md",
+      "sourceRelativePath": "rules/zh/security.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-security.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "rules-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\rules\\zh\\testing.md",
+      "sourceRelativePath": "rules/zh/testing.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\rules\\zh-testing.md",
+      "strategy": "flatten-copy",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\plugins\\marketplace.json",
+      "sourceRelativePath": ".agents\\plugins\\marketplace.json",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\plugins\\marketplace.json",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\agent-introspection-debugging\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\agent-introspection-debugging\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\agent-introspection-debugging\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\agent-sort\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\agent-sort\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\agent-sort\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\api-design\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\api-design\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\api-design\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\api-design\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\api-design\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\api-design\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\article-writing\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\article-writing\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\article-writing\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\article-writing\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\article-writing\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\article-writing\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\backend-patterns\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\backend-patterns\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\backend-patterns\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\backend-patterns\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\backend-patterns\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\backend-patterns\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\brand-voice\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\brand-voice\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\brand-voice\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\brand-voice\\references\\voice-profile-schema.md",
+      "sourceRelativePath": ".agents\\skills\\brand-voice\\references\\voice-profile-schema.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\brand-voice\\references\\voice-profile-schema.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\bun-runtime\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\bun-runtime\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\bun-runtime\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\bun-runtime\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\bun-runtime\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\bun-runtime\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\claude-api\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\claude-api\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\claude-api\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\claude-api\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\claude-api\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\claude-api\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\coding-standards\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\coding-standards\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\coding-standards\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\coding-standards\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\coding-standards\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\coding-standards\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\content-engine\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\content-engine\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\content-engine\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\content-engine\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\content-engine\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\content-engine\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\crosspost\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\crosspost\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\crosspost\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\crosspost\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\crosspost\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\crosspost\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\deep-research\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\deep-research\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\deep-research\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\deep-research\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\deep-research\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\deep-research\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\dmux-workflows\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\dmux-workflows\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\dmux-workflows\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\dmux-workflows\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\dmux-workflows\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\dmux-workflows\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\documentation-lookup\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\documentation-lookup\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\documentation-lookup\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\documentation-lookup\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\documentation-lookup\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\documentation-lookup\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\e2e-testing\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\e2e-testing\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\e2e-testing\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\e2e-testing\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\e2e-testing\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\e2e-testing\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\eval-harness\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\eval-harness\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\eval-harness\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\eval-harness\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\eval-harness\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\eval-harness\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\everything-claude-code\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\everything-claude-code\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\everything-claude-code\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\everything-claude-code\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\everything-claude-code\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\everything-claude-code\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\exa-search\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\exa-search\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\exa-search\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\exa-search\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\exa-search\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\exa-search\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\fal-ai-media\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\fal-ai-media\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\fal-ai-media\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\fal-ai-media\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\fal-ai-media\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\fal-ai-media\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\frontend-design\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\frontend-design\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\frontend-design\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\frontend-patterns\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\frontend-patterns\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\frontend-patterns\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\frontend-patterns\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\frontend-patterns\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\frontend-patterns\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\frontend-slides\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\frontend-slides\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\frontend-slides\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\frontend-slides\\STYLE_PRESETS.md",
+      "sourceRelativePath": ".agents\\skills\\frontend-slides\\STYLE_PRESETS.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\frontend-slides\\STYLE_PRESETS.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\frontend-slides\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\frontend-slides\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\frontend-slides\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\investor-materials\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\investor-materials\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\investor-materials\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\investor-materials\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\investor-materials\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\investor-materials\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\investor-outreach\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\investor-outreach\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\investor-outreach\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\investor-outreach\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\investor-outreach\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\investor-outreach\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\market-research\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\market-research\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\market-research\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\market-research\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\market-research\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\market-research\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\mcp-server-patterns\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\mcp-server-patterns\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\mcp-server-patterns\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\nextjs-turbopack\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\nextjs-turbopack\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\nextjs-turbopack\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\nextjs-turbopack\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\nextjs-turbopack\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\nextjs-turbopack\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\product-capability\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\product-capability\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\product-capability\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\security-review\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\security-review\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\security-review\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\security-review\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\security-review\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\security-review\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\strategic-compact\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\strategic-compact\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\strategic-compact\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\strategic-compact\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\strategic-compact\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\strategic-compact\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\tdd-workflow\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\tdd-workflow\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\tdd-workflow\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\tdd-workflow\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\tdd-workflow\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\tdd-workflow\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\verification-loop\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\verification-loop\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\verification-loop\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\verification-loop\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\verification-loop\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\verification-loop\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\video-editing\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\video-editing\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\video-editing\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\video-editing\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\video-editing\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\video-editing\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\x-api\\SKILL.md",
+      "sourceRelativePath": ".agents\\skills\\x-api\\SKILL.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\x-api\\SKILL.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\.agents\\skills\\x-api\\agents\\openai.yaml",
+      "sourceRelativePath": ".agents\\skills\\x-api\\agents\\openai.yaml",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\.agents\\skills\\x-api\\agents\\openai.yaml",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\a11y-architect.md",
+      "sourceRelativePath": "agents\\a11y-architect.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\a11y-architect.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\architect.md",
+      "sourceRelativePath": "agents\\architect.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\architect.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\build-error-resolver.md",
+      "sourceRelativePath": "agents\\build-error-resolver.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\build-error-resolver.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\chief-of-staff.md",
+      "sourceRelativePath": "agents\\chief-of-staff.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\chief-of-staff.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\code-architect.md",
+      "sourceRelativePath": "agents\\code-architect.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\code-architect.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\code-explorer.md",
+      "sourceRelativePath": "agents\\code-explorer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\code-explorer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\code-reviewer.md",
+      "sourceRelativePath": "agents\\code-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\code-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\code-simplifier.md",
+      "sourceRelativePath": "agents\\code-simplifier.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\code-simplifier.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\comment-analyzer.md",
+      "sourceRelativePath": "agents\\comment-analyzer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\comment-analyzer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\conversation-analyzer.md",
+      "sourceRelativePath": "agents\\conversation-analyzer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\conversation-analyzer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\cpp-build-resolver.md",
+      "sourceRelativePath": "agents\\cpp-build-resolver.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\cpp-build-resolver.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\cpp-reviewer.md",
+      "sourceRelativePath": "agents\\cpp-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\cpp-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\csharp-reviewer.md",
+      "sourceRelativePath": "agents\\csharp-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\csharp-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\dart-build-resolver.md",
+      "sourceRelativePath": "agents\\dart-build-resolver.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\dart-build-resolver.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\database-reviewer.md",
+      "sourceRelativePath": "agents\\database-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\database-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\doc-updater.md",
+      "sourceRelativePath": "agents\\doc-updater.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\doc-updater.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\docs-lookup.md",
+      "sourceRelativePath": "agents\\docs-lookup.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\docs-lookup.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\e2e-runner.md",
+      "sourceRelativePath": "agents\\e2e-runner.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\e2e-runner.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\flutter-reviewer.md",
+      "sourceRelativePath": "agents\\flutter-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\flutter-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\gan-evaluator.md",
+      "sourceRelativePath": "agents\\gan-evaluator.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\gan-evaluator.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\gan-generator.md",
+      "sourceRelativePath": "agents\\gan-generator.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\gan-generator.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\gan-planner.md",
+      "sourceRelativePath": "agents\\gan-planner.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\gan-planner.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\go-build-resolver.md",
+      "sourceRelativePath": "agents\\go-build-resolver.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\go-build-resolver.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\go-reviewer.md",
+      "sourceRelativePath": "agents\\go-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\go-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\harness-optimizer.md",
+      "sourceRelativePath": "agents\\harness-optimizer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\harness-optimizer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\healthcare-reviewer.md",
+      "sourceRelativePath": "agents\\healthcare-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\healthcare-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\java-build-resolver.md",
+      "sourceRelativePath": "agents\\java-build-resolver.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\java-build-resolver.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\java-reviewer.md",
+      "sourceRelativePath": "agents\\java-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\java-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\kotlin-build-resolver.md",
+      "sourceRelativePath": "agents\\kotlin-build-resolver.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\kotlin-build-resolver.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\kotlin-reviewer.md",
+      "sourceRelativePath": "agents\\kotlin-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\kotlin-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\loop-operator.md",
+      "sourceRelativePath": "agents\\loop-operator.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\loop-operator.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\opensource-forker.md",
+      "sourceRelativePath": "agents\\opensource-forker.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\opensource-forker.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\opensource-packager.md",
+      "sourceRelativePath": "agents\\opensource-packager.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\opensource-packager.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\opensource-sanitizer.md",
+      "sourceRelativePath": "agents\\opensource-sanitizer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\opensource-sanitizer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\performance-optimizer.md",
+      "sourceRelativePath": "agents\\performance-optimizer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\performance-optimizer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\planner.md",
+      "sourceRelativePath": "agents\\planner.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\planner.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\pr-test-analyzer.md",
+      "sourceRelativePath": "agents\\pr-test-analyzer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\pr-test-analyzer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\python-reviewer.md",
+      "sourceRelativePath": "agents\\python-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\python-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\pytorch-build-resolver.md",
+      "sourceRelativePath": "agents\\pytorch-build-resolver.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\pytorch-build-resolver.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\refactor-cleaner.md",
+      "sourceRelativePath": "agents\\refactor-cleaner.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\refactor-cleaner.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\rust-build-resolver.md",
+      "sourceRelativePath": "agents\\rust-build-resolver.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\rust-build-resolver.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\rust-reviewer.md",
+      "sourceRelativePath": "agents\\rust-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\rust-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\security-reviewer.md",
+      "sourceRelativePath": "agents\\security-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\security-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\seo-specialist.md",
+      "sourceRelativePath": "agents\\seo-specialist.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\seo-specialist.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\silent-failure-hunter.md",
+      "sourceRelativePath": "agents\\silent-failure-hunter.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\silent-failure-hunter.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\tdd-guide.md",
+      "sourceRelativePath": "agents\\tdd-guide.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\tdd-guide.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\type-design-analyzer.md",
+      "sourceRelativePath": "agents\\type-design-analyzer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\type-design-analyzer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\agents\\typescript-reviewer.md",
+      "sourceRelativePath": "agents\\typescript-reviewer.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\skills\\typescript-reviewer.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "agents-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\AGENTS.md",
+      "sourceRelativePath": "AGENTS.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\AGENTS.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\agent-sort.md",
+      "sourceRelativePath": "commands\\agent-sort.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\agent-sort.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\aside.md",
+      "sourceRelativePath": "commands\\aside.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\aside.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\build-fix.md",
+      "sourceRelativePath": "commands\\build-fix.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\build-fix.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\checkpoint.md",
+      "sourceRelativePath": "commands\\checkpoint.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\checkpoint.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\claw.md",
+      "sourceRelativePath": "commands\\claw.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\claw.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\code-review.md",
+      "sourceRelativePath": "commands\\code-review.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\code-review.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\context-budget.md",
+      "sourceRelativePath": "commands\\context-budget.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\context-budget.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\cpp-build.md",
+      "sourceRelativePath": "commands\\cpp-build.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\cpp-build.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\cpp-review.md",
+      "sourceRelativePath": "commands\\cpp-review.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\cpp-review.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\cpp-test.md",
+      "sourceRelativePath": "commands\\cpp-test.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\cpp-test.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\devfleet.md",
+      "sourceRelativePath": "commands\\devfleet.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\devfleet.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\docs.md",
+      "sourceRelativePath": "commands\\docs.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\docs.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\e2e.md",
+      "sourceRelativePath": "commands\\e2e.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\e2e.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\eval.md",
+      "sourceRelativePath": "commands\\eval.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\eval.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\evolve.md",
+      "sourceRelativePath": "commands\\evolve.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\evolve.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\feature-dev.md",
+      "sourceRelativePath": "commands\\feature-dev.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\feature-dev.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\flutter-build.md",
+      "sourceRelativePath": "commands\\flutter-build.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\flutter-build.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\flutter-review.md",
+      "sourceRelativePath": "commands\\flutter-review.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\flutter-review.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\flutter-test.md",
+      "sourceRelativePath": "commands\\flutter-test.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\flutter-test.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\gan-build.md",
+      "sourceRelativePath": "commands\\gan-build.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\gan-build.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\gan-design.md",
+      "sourceRelativePath": "commands\\gan-design.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\gan-design.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\go-build.md",
+      "sourceRelativePath": "commands\\go-build.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\go-build.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\go-review.md",
+      "sourceRelativePath": "commands\\go-review.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\go-review.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\go-test.md",
+      "sourceRelativePath": "commands\\go-test.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\go-test.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\gradle-build.md",
+      "sourceRelativePath": "commands\\gradle-build.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\gradle-build.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\harness-audit.md",
+      "sourceRelativePath": "commands\\harness-audit.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\harness-audit.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\hookify-configure.md",
+      "sourceRelativePath": "commands\\hookify-configure.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\hookify-configure.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\hookify-help.md",
+      "sourceRelativePath": "commands\\hookify-help.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\hookify-help.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\hookify-list.md",
+      "sourceRelativePath": "commands\\hookify-list.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\hookify-list.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\hookify.md",
+      "sourceRelativePath": "commands\\hookify.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\hookify.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\instinct-export.md",
+      "sourceRelativePath": "commands\\instinct-export.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\instinct-export.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\instinct-import.md",
+      "sourceRelativePath": "commands\\instinct-import.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\instinct-import.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\instinct-status.md",
+      "sourceRelativePath": "commands\\instinct-status.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\instinct-status.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\jira.md",
+      "sourceRelativePath": "commands\\jira.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\jira.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\kotlin-build.md",
+      "sourceRelativePath": "commands\\kotlin-build.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\kotlin-build.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\kotlin-review.md",
+      "sourceRelativePath": "commands\\kotlin-review.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\kotlin-review.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\kotlin-test.md",
+      "sourceRelativePath": "commands\\kotlin-test.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\kotlin-test.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\learn-eval.md",
+      "sourceRelativePath": "commands\\learn-eval.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\learn-eval.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\learn.md",
+      "sourceRelativePath": "commands\\learn.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\learn.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\loop-start.md",
+      "sourceRelativePath": "commands\\loop-start.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\loop-start.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\loop-status.md",
+      "sourceRelativePath": "commands\\loop-status.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\loop-status.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\model-route.md",
+      "sourceRelativePath": "commands\\model-route.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\model-route.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\multi-backend.md",
+      "sourceRelativePath": "commands\\multi-backend.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\multi-backend.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\multi-execute.md",
+      "sourceRelativePath": "commands\\multi-execute.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\multi-execute.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\multi-frontend.md",
+      "sourceRelativePath": "commands\\multi-frontend.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\multi-frontend.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\multi-plan.md",
+      "sourceRelativePath": "commands\\multi-plan.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\multi-plan.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\multi-workflow.md",
+      "sourceRelativePath": "commands\\multi-workflow.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\multi-workflow.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\orchestrate.md",
+      "sourceRelativePath": "commands\\orchestrate.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\orchestrate.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\plan.md",
+      "sourceRelativePath": "commands\\plan.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\plan.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\pm2.md",
+      "sourceRelativePath": "commands\\pm2.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\pm2.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\projects.md",
+      "sourceRelativePath": "commands\\projects.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\projects.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\promote.md",
+      "sourceRelativePath": "commands\\promote.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\promote.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\prompt-optimize.md",
+      "sourceRelativePath": "commands\\prompt-optimize.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\prompt-optimize.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\prp-commit.md",
+      "sourceRelativePath": "commands\\prp-commit.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\prp-commit.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\prp-implement.md",
+      "sourceRelativePath": "commands\\prp-implement.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\prp-implement.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\prp-plan.md",
+      "sourceRelativePath": "commands\\prp-plan.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\prp-plan.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\prp-pr.md",
+      "sourceRelativePath": "commands\\prp-pr.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\prp-pr.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\prp-prd.md",
+      "sourceRelativePath": "commands\\prp-prd.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\prp-prd.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\prune.md",
+      "sourceRelativePath": "commands\\prune.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\prune.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\python-review.md",
+      "sourceRelativePath": "commands\\python-review.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\python-review.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\quality-gate.md",
+      "sourceRelativePath": "commands\\quality-gate.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\quality-gate.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\refactor-clean.md",
+      "sourceRelativePath": "commands\\refactor-clean.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\refactor-clean.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\resume-session.md",
+      "sourceRelativePath": "commands\\resume-session.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\resume-session.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\review-pr.md",
+      "sourceRelativePath": "commands\\review-pr.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\review-pr.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\rules-distill.md",
+      "sourceRelativePath": "commands\\rules-distill.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\rules-distill.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\rust-build.md",
+      "sourceRelativePath": "commands\\rust-build.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\rust-build.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\rust-review.md",
+      "sourceRelativePath": "commands\\rust-review.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\rust-review.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\rust-test.md",
+      "sourceRelativePath": "commands\\rust-test.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\rust-test.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\santa-loop.md",
+      "sourceRelativePath": "commands\\santa-loop.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\santa-loop.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\save-session.md",
+      "sourceRelativePath": "commands\\save-session.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\save-session.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\sessions.md",
+      "sourceRelativePath": "commands\\sessions.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\sessions.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\setup-pm.md",
+      "sourceRelativePath": "commands\\setup-pm.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\setup-pm.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\skill-create.md",
+      "sourceRelativePath": "commands\\skill-create.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\skill-create.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\skill-health.md",
+      "sourceRelativePath": "commands\\skill-health.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\skill-health.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\tdd.md",
+      "sourceRelativePath": "commands\\tdd.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\tdd.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\test-coverage.md",
+      "sourceRelativePath": "commands\\test-coverage.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\test-coverage.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\update-codemaps.md",
+      "sourceRelativePath": "commands\\update-codemaps.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\update-codemaps.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\update-docs.md",
+      "sourceRelativePath": "commands\\update-docs.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\update-docs.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    },
+    {
+      "kind": "copy-file",
+      "moduleId": "commands-core",
+      "sourcePath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\ecc_temp\\commands\\verify.md",
+      "sourceRelativePath": "commands\\verify.md",
+      "destinationPath": "C:\\Users\\rgang\\.gemini\\antigravity\\playground\\binary-shepard\\.agent\\workflows\\verify.md",
+      "strategy": "preserve-relative-path",
+      "ownership": "managed",
+      "scaffoldOnly": false
+    }
+  ]
+}

@@ -69,33 +69,51 @@ async def fetch_auction_data(data: AuctionURL):
             # Remove year from model name
             model_name = title.replace(str(year), "").strip() if year_match else title
 
-            # Extract Odometer, Start Status, Keys
+            # Extract Odometer, Start Status, Keys from listing-details
             specs = {}
-            details_table = soup.select_one('table.vehicle.details')
-            if details_table:
-                for row in details_table.find_all('tr'):
-                    cols = row.find_all('td')
-                    if len(cols) >= 2:
-                        key = cols[0].text.strip().lower()
-                        val = cols[1].text.strip()
-                        specs[key] = val
+            listing_details = soup.select_one('.listing-details, .vehicle-details')
+            if listing_details:
+                # Find all items that might contain labels and values
+                items = listing_details.find_all(['b', 'div', 'li', 'span'])
+                for item in items:
+                    text = item.text.strip().lower()
+                    # Check for icons (text-success means Yes)
+                    has_check = item.find('i', class_='text-success') is not None
+                    
+                    if 'odometer' in text or 'mileage' in text:
+                        # Extract the next text node or sibling
+                        val = item.next_sibling if item.next_sibling else ""
+                        specs['odometer'] = str(val).strip().replace(":", "") or text.split(':')[-1].strip()
+                    if 'starts' in text:
+                        specs['starts'] = "YES" if has_check else "NO"
+                    if 'keys' in text:
+                        specs['keys'] = "YES" if has_check else "NO"
+                    if 'code' in text:
+                        val = item.next_sibling if item.next_sibling else ""
+                        specs['code'] = str(val).strip().replace(":", "") or text.split(':')[-1].strip()
 
-            props_table = soup.select_one('table.vehicle-properties')
-            if props_table:
-                for row in props_table.find_all('tr'):
-                    cols = row.find_all('td')
-                    if len(cols) >= 2:
-                        key = cols[0].text.strip().lower()
-                        val = cols[1].text.strip()
-                        specs[key] = val
-
-            # Extract Images (360 and Slider)
+            # Extract Images (Deep Scan)
             image_urls = []
-            for img in soup.select('li img.current-image, .slick-slide:not(.slick-cloned) img'):
-                src = img.get('src') or img.get('data-src')
-                if src and src.startswith('http'):
-                    if src not in image_urls: image_urls.append(src)
+            img_selectors = [
+                '.slick-slide:not(.slick-cloned) img',
+                'li img.current-image',
+                '.vehicle-image img',
+                '.gallery-item img'
+            ]
+            for sel in img_selectors:
+                for img in soup.select(sel):
+                    src = img.get('src') or img.get('data-src') or img.get('srcset')
+                    if src and ('cloudfront' in src or 'auctionnation' in src):
+                        if src.startswith('//'): src = 'https:' + src
+                        if src not in image_urls: image_urls.append(src)
             
+            # Fallback: any image in the main content area
+            if not image_urls:
+                for img in soup.find_all('img'):
+                    src = img.get('src')
+                    if src and ('vehicles' in src or 'lot' in src or 'prod' in src):
+                        if src not in image_urls: image_urls.append(src)
+
             # Limit to top 10 for AI analysis
             analysis_images = image_urls[:10]
             
@@ -106,6 +124,7 @@ async def fetch_auction_data(data: AuctionURL):
                 "odometer": specs.get('odometer', 'Unknown'),
                 "starts": specs.get('starts', 'Unknown'),
                 "has_keys": specs.get('keys', 'Unknown'),
+                "code": specs.get('code', 'Unknown'),
                 "image_urls": analysis_images
             }
     except Exception as e:

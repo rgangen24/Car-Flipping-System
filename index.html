@@ -505,7 +505,7 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <h1>APEX v1.2.0</h1>
+                <h1>APEX v1.2.1</h1>
                 <p>Personal Car Auction Intelligence System for Rishen | Cape Town</p>
             </div>
             <div class="currency-badge">ZAR / South Africa</div>
@@ -1135,8 +1135,15 @@
                     document.getElementById('auction-house').value = 'auction-nation';
                     
                     // Add details to insights
-                    const detailsStr = `Odometer: ${data.odometer} | Starts: ${data.starts} | Keys: ${data.has_keys}`;
+                    const detailsStr = `Odometer: ${data.odometer} | Starts: ${data.starts} | Keys: ${data.has_keys} | Code: ${data.code}`;
                     document.getElementById('pro-insight-txt').innerText = detailsStr;
+
+                    // Auto-set accident penalty based on code
+                    if (data.code && data.code.includes('3')) {
+                        document.getElementById('accident-penalty').value = "0.35";
+                    } else {
+                        document.getElementById('accident-penalty').value = "0.20";
+                    }
 
                     recalculate();
                     

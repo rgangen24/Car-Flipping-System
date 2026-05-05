@@ -132,6 +132,8 @@ async def fetch_auction_data(data: AuctionURL):
 
 class AnalysisRequest(BaseModel):
     image_urls: Optional[List[str]] = None
+    model_name: Optional[str] = "Unknown Vehicle"
+    starts_status: Optional[str] = "Unknown"
 
 @app.post("/api/analyze-vehicle")
 async def analyze_vehicle(
@@ -185,16 +187,26 @@ async def analyze_vehicle(
         except:
             model = genai.GenerativeModel('gemini-2.5-flash')
         
-        prompt = """
-        You are APEX, a Cape Town car salvage expert. Examine these car auction photos (Interior and Exterior).
+        model_name = request_data.model_name if request_data else "Unknown"
+        starts_status = request_data.starts_status if request_data else "Unknown"
+
+        prompt = f"""
+        You are a Senior Salvage Assessor in Cape Town. Examine these auction photos for a {model_name}.
         
-        TASK:
-        1. Identify damages: bumper-rep, frontend-rep, paint-rep, airbags-rep. Be aggressive—if a panel looks slightly off or a light is cracked, flag it.
-        2. Estimate the 'Clean Market Retail' value (ARV) in ZAR for this car assuming it was in perfect condition in South Africa.
-        3. Provide a 'Pro Strategy' insight. Mention warning lights, engine bay issues, or interior condition.
+        CRITICAL SCAN:
+        1. AIRBAGS: Look for ANY white fabric/bags visible on seats or dashboard. If found, flag 'airbags-rep'.
+        2. STRUCTURAL: Is the bumper detached? Is the hood crumpled? Is the grille missing? If yes, flag 'bumper-rep' and 'frontend-rep'.
+        3. MECHANICAL: The listing status is Starts: {starts_status}. If 'NO', you MUST flag 'frontend-rep' as there is likely radiator/engine bay damage.
         
-        Return raw JSON:
-        {"damages": ["..."], "market_retail": 120000, "insight": "..."}
+        MARKET VALUE:
+        Estimate the CLEAN RETAIL price (ARV) for a {model_name} in perfect condition in the South African second-hand market.
+        
+        Return raw JSON ONLY:
+        {{
+            "damages": ["bumper-rep", "frontend-rep", "paint-rep", "airbags-rep"], 
+            "market_retail": 245000, 
+            "insight": "Explain EXACTLY what you saw in the photos (e.g. 'Left headlight smashed, airbag out')."
+        }}
         """
         
         response = model.generate_content([*vision_files, prompt])

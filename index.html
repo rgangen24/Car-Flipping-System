@@ -505,7 +505,7 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <h1>APEX v1.2.5</h1>
+                <h1>APEX v1.3.0 (PRO)</h1>
                 <p>Personal Car Auction Intelligence System for Rishen | Cape Town</p>
             </div>
             <div class="currency-badge">ZAR / South Africa</div>
@@ -903,8 +903,12 @@
                     <span class="waterfall-value">R ${hammer.toLocaleString()}</span>
                 </div>
                 <div class="waterfall-item">
-                    <span class="waterfall-label">Auction Fees (Incl. VAT)</span>
-                    <span class="waterfall-value neg">- R ${(comm + admin).toLocaleString()}</span>
+                    <span class="waterfall-label">Auction Fee (5% + VAT)</span>
+                    <span class="waterfall-value neg">- R ${comm.toLocaleString()}</span>
+                </div>
+                <div class="waterfall-item">
+                    <span class="waterfall-label">Doc/Admin Fee (R1.5k + VAT)</span>
+                    <span class="waterfall-value neg">- R ${admin.toLocaleString()}</span>
                 </div>
                 <div class="waterfall-item">
                     <span class="waterfall-label">Repairs & Parts</span>
@@ -918,9 +922,9 @@
                     <span class="waterfall-label">Projected Sale Price (ARV)</span>
                     <span class="waterfall-value">R ${arv.toLocaleString()}</span>
                 </div>
-                <div class="waterfall-item">
-                    <span class="waterfall-label">Estimated Net Profit</span>
-                    <span class="waterfall-value pos">R ${Math.max(0, profit).toLocaleString()}</span>
+                <div class="waterfall-item" style="border-top: 1px solid var(--border); padding-top: 10px; margin-top: 10px;">
+                    <span class="waterfall-label" style="font-weight: bold; color: var(--accent-green);">Estimated Net Profit</span>
+                    <span class="waterfall-value pos" style="font-weight: bold; font-size: 1.2rem;">R ${Math.max(0, profit).toLocaleString()}</span>
                 </div>
             `;
 

@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APEX PRO: Car Auction Intelligence System</title>
+    <title>APEX v1.4.1: Ultimate Auction Intelligence</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-base: #0c0f14;
             --bg-surface: #141923;
             --bg-card: #1c2331;
-            --bg-card-hover: #263043;
             --accent-gold: #ffaa00;
             --accent-gold-rgb: 255, 170, 0;
             --accent-green: #00e676;
-            --accent-amber: #ff9100;
             --accent-red: #ff3d00;
             --accent-blue: #0091ff;
             --text-main: #f1f5f9;
@@ -25,49 +23,50 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-base); color: var(--text-main); padding: 1.5rem; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-base); color: var(--text-main); padding: 1.5rem; line-height: 1.5; }
         .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 1.5rem; }
         @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } }
 
-        header { grid-column: 1 / -1; display: flex; justify-content: space-between; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem; }
-        .logo-section h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #fff, var(--accent-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header { grid-column: 1 / -1; display: flex; justify-content: space-between; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem; }
+        .logo-section h1 { font-size: 1.8rem; font-weight: 800; background: linear-gradient(135deg, #fff, var(--accent-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        .panel { background-color: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--border-color); padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
-        .panel-heading { font-size: 1.1rem; font-weight: 700; color: #fff; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; }
+        .panel { background-color: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--border-color); padding: 1.5rem; display: flex; flex-direction: column; gap: 1.2rem; }
+        .panel-heading { font-size: 1rem; font-weight: 700; color: #fff; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; }
 
-        .input-group { display: flex; flex-direction: column; gap: 0.4rem; }
-        label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
-        input, select { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: #fff; padding: 0.75rem; font-size: 1rem; }
-        input:focus { border-color: var(--accent-gold); outline: none; }
+        input, select { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: #fff; padding: 0.6rem; font-size: 0.95rem; width: 100%; }
+        label { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.3rem; display: block; }
 
-        .btn { background: var(--accent-blue); color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; transition: 0.2s; }
-        .btn:hover { background: #007aff; transform: translateY(-1px); }
+        .btn { background: var(--accent-blue); color: #fff; border: none; padding: 0.7rem 1.2rem; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; transition: 0.2s; }
+        .btn:hover { background: #007aff; }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .checkbox-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-        .checkbox-item { background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; gap: 8px; transition: 0.2s; }
+        .checkbox-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+        .checkbox-item { background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.7rem; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
         .checkbox-item.checked { border-color: var(--accent-gold); background: rgba(var(--accent-gold-rgb), 0.1); }
 
-        .ai-box { border: 2px dashed var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; background: rgba(0,0,0,0.2); }
-        .ai-status { color: var(--accent-gold); font-weight: 700; font-size: 0.9rem; }
-        
-        .verdict-card { padding: 1.5rem; border-radius: var(--radius-md); border-left: 5px solid var(--accent-gold); background: rgba(var(--accent-gold-rgb), 0.05); }
-        .bid-card { background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
-        .bid-amount { font-size: 2.2rem; font-weight: 800; font-family: 'JetBrains Mono'; color: #fff; }
+        .ai-box { border: 2px dashed var(--border-color); border-radius: var(--radius-md); padding: 1.2rem; text-align: center; background: rgba(0,0,0,0.2); }
+        .ai-status { color: var(--accent-gold); font-weight: 700; font-size: 0.85rem; }
+
+        .report-card { background: #000; border-radius: var(--radius-md); padding: 1rem; margin-top: 10px; border: 1px solid #333; font-size: 0.85rem; color: #cbd5e1; }
+        .report-card strong { color: var(--accent-gold); display: block; margin-bottom: 5px; }
+
+        .bid-card { background: var(--bg-card); padding: 1.2rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
+        .bid-amount { font-size: 1.8rem; font-weight: 800; font-family: 'JetBrains Mono'; color: #fff; }
         .bid-amount span { color: var(--accent-gold); }
 
-        .waterfall { background: var(--bg-card); padding: 1rem; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 8px; }
-        .wf-item { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-muted); }
-        .wf-item.total { border-top: 1px solid #444; padding-top: 8px; margin-top: 8px; color: var(--accent-green); font-weight: 800; font-size: 1.1rem; }
+        .waterfall { background: var(--bg-card); padding: 1rem; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 6px; }
+        .wf-item { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); }
+        .wf-item.total { border-top: 1px solid #444; padding-top: 6px; margin-top: 6px; color: var(--accent-green); font-weight: 800; font-size: 1rem; }
         .neg { color: var(--accent-red); }
         .pos { color: var(--accent-green); }
+
+        .verdict-card { padding: 1rem; border-radius: var(--radius-md); border-left: 5px solid var(--accent-gold); background: rgba(var(--accent-gold-rgb), 0.05); }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo-section">
-                <h1>APEX v1.4.0 (ULTIMATE)</h1>
+                <h1>APEX v1.4.1 (PERFECT ASSESSOR)</h1>
                 <p>Personal Car Auction Intelligence System for Rishen | Cape Town</p>
             </div>
             <div class="currency-badge">ZAR / South Africa</div>
@@ -75,33 +74,20 @@
 
         <main class="panel">
             <div class="panel-heading">⚡ Phase A: Auction Import</div>
-            <div class="input-group">
-                <label>Auction Nation URL</label>
-                <div style="display: flex; gap: 10px;">
-                    <input type="text" id="auction-url" placeholder="Paste link..." style="flex: 1;">
-                    <button id="import-btn" onclick="fetchAuctionData()" class="btn">IMPORT</button>
-                </div>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="auction-url" placeholder="Paste link..." style="flex: 1;">
+                <button id="import-btn" onclick="fetchAuctionData()" class="btn">IMPORT</button>
             </div>
 
-            <div class="grid-2">
-                <div class="input-group">
-                    <label>Vehicle Identity</label>
-                    <input type="text" id="car-model" placeholder="Model Name">
-                </div>
-                <div class="input-group">
-                    <label>Year</label>
-                    <input type="number" id="car-year" value="2018">
-                </div>
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem;">
+                <div><label>Vehicle Model</label><input type="text" id="car-model"></div>
+                <div><label>Year</label><input type="number" id="car-year"></div>
             </div>
 
             <div class="panel-heading">📊 Phase B: Market Valuation</div>
-            <div class="grid-2">
-                <div class="input-group">
-                    <label>Clean Market Retail (R)</label>
-                    <input type="number" id="clean-arv" value="0">
-                </div>
-                <div class="input-group">
-                    <label>Auction Fee Tier</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div><label>Clean Market Retail (R)</label><input type="number" id="clean-arv" value="0"></div>
+                <div><label>Auction Fee Tier</label>
                     <select id="auction-house">
                         <option value="auction-nation">Auction Nation (5.75% + R1725)</option>
                         <option value="smd">SMD (9.2% + R2875)</option>
@@ -109,44 +95,40 @@
                 </div>
             </div>
 
-            <div class="panel-heading">👁️ Phase C: Block-Proof AI Scan</div>
+            <div class="panel-heading">👁️ Phase C: Detailed AI Assessment</div>
             <div class="ai-box">
-                <div id="ai-status" class="ai-status">Idle. Paste link to begin...</div>
-                <div id="ai-findings" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; font-style: italic;"></div>
+                <div id="ai-status" class="ai-status">Ready. Paste link to scan all 31 images.</div>
                 <div id="ai-image-tray" style="display: flex; gap: 5px; margin-top: 10px; overflow-x: auto; justify-content: center;"></div>
+                <div id="ai-report" class="report-card" style="display: none;">
+                    <strong>ASSESSOR'S DAMAGE LOG:</strong>
+                    <span id="ai-report-text">Scanning every panel for hidden damage...</span>
+                </div>
             </div>
 
-            <div class="panel-heading">🔩 Phase D: Damage Assessor</div>
+            <div class="panel-heading">🔩 Phase D: Damage Checklist</div>
             <div class="checkbox-list">
                 <div class="checkbox-item" onclick="toggleRepair('bumper-rep')"><input type="checkbox" id="bumper-rep"> <span>Bumper (R6k)</span></div>
                 <div class="checkbox-item" onclick="toggleRepair('airbags-rep')"><input type="checkbox" id="airbags-rep"> <span>Airbags (R8k)</span></div>
                 <div class="checkbox-item" onclick="toggleRepair('frontend-rep')"><input type="checkbox" id="frontend-rep"> <span>Frontend (R5k)</span></div>
                 <div class="checkbox-item" onclick="toggleRepair('paint-rep')"><input type="checkbox" id="paint-rep"> <span>Paint (R3.5k)</span></div>
             </div>
-            <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent-gold);">
-                <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">TOTAL REPAIR BUDGET:</span>
+            <div style="background: var(--bg-card); padding: 0.8rem; border-radius: 8px; border-left: 4px solid var(--accent-gold);">
+                <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted);">REPAIR TOTAL:</span>
                 <span id="display-repair-total" style="color: var(--accent-gold); font-family: 'JetBrains Mono'; font-weight: 800; margin-left: 10px;">R 0</span>
             </div>
         </main>
 
-        <aside style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <aside style="display: flex; flex-direction: column; gap: 1.2rem;">
             <div id="verdict-wrapper" class="verdict-card amber">
-                <h2 style="font-size: 1.2rem; font-weight: 800; color: var(--accent-gold);">AMBER ALERT</h2>
-                <p id="risk-meta-text" style="font-size: 0.85rem; color: #fff;">System ready for analysis.</p>
+                <h2 style="font-size: 1.1rem; font-weight: 800; color: var(--accent-gold);">SYSTEM READY</h2>
+                <p id="risk-meta-text" style="font-size: 0.8rem;">Awaiting vehicle data...</p>
             </div>
 
-            <div class="panel-heading">💰 Bid Calculator</div>
-            <div class="bid-card" style="border-top: 4px solid var(--accent-gold);">
-                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Optimal Bid (19% ROI)</span>
+            <div class="bid-card">
+                <label>OPTIMAL BID (19% ROI)</label>
                 <div class="bid-amount" id="tgt-bid-val">R 0</div>
             </div>
 
-            <div style="background: #111; padding: 1rem; border-radius: 8px; border: 1px dashed #444;">
-                <p style="color: var(--accent-gold); font-size: 0.8rem; font-weight: 800;">💡 PRO INSIGHT</p>
-                <p id="pro-insight-txt" style="font-style: italic; font-size: 0.85rem; color: #cbd5e1;">"Import a vehicle to get assessor notes."</p>
-            </div>
-
-            <div class="panel-heading">📊 Profitability Waterfall</div>
             <div class="waterfall" id="profit-waterfall"></div>
         </aside>
     </div>
@@ -159,14 +141,31 @@
             recalculate();
         }
 
+        async function resizeImage(url) {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.crossOrigin = "Anonymous";
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    const maxW = 800;
+                    const scale = maxW / img.width;
+                    canvas.width = maxW;
+                    canvas.height = img.height * scale;
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    resolve(canvas.toDataURL('image/jpeg', 0.7));
+                };
+                img.src = `https://images.weserv.nl/?url=${encodeURIComponent(url.replace('https://', ''))}`;
+            });
+        }
+
         async function fetchAuctionData() {
             const url = document.getElementById('auction-url').value;
             const btn = document.getElementById('import-btn');
-            if (!url) return alert("Paste a link first.");
+            if (!url) return;
 
             btn.innerText = "IMPORTING...";
-            btn.disabled = true;
-            document.getElementById('ai-status').innerText = "Scraping vehicle data...";
+            document.getElementById('ai-status').innerText = "Locating full gallery (31 photos)...";
 
             try {
                 const resp = await fetch('/api/fetch-auction-data', {
@@ -178,91 +177,64 @@
                 if (data.success) {
                     document.getElementById('car-model').value = data.model;
                     document.getElementById('car-year').value = data.year;
-                    
-                    // ULTIMATE MARKET HEURISTICS (Live Data Average)
                     if (data.model.includes('KIA RIO') && data.year == 2015) {
                         document.getElementById('clean-arv').value = 138500;
-                        recalculate(); // FORCE CALC
+                        recalculate();
                     }
-
-                    runNuclearAIAnalysis(data.image_urls, data.model, data.starts);
-                } else {
-                    alert("Import failed: " + data.error);
+                    runDetailedAIAnalysis(data.image_urls, data.model, data.starts);
                 }
-            } catch (e) {
-                alert("Connection error during import.");
-            } finally {
-                btn.innerText = "IMPORT";
-                btn.disabled = false;
-            }
+            } catch (e) { alert("Import Error"); }
+            finally { btn.innerText = "IMPORT"; }
         }
 
-        async function runNuclearAIAnalysis(imageUrls, modelName, startsStatus) {
+        async function runDetailedAIAnalysis(imageUrls, modelName, startsStatus) {
             const status = document.getElementById('ai-status');
-            status.innerHTML = `<span style="color: var(--accent-blue);">Bypassing Cloudfront blocks... (Injecting Base64)</span>`;
+            const tray = document.getElementById('ai-image-tray');
+            const report = document.getElementById('ai-report');
+            const reportText = document.getElementById('ai-report-text');
+
+            status.innerHTML = `<span style="color: var(--accent-blue);">Resizing gallery for Deep Scan...</span>`;
+            tray.innerHTML = '';
             
             const imageData = [];
-            const tray = document.getElementById('ai-image-tray');
-            tray.innerHTML = '';
-
-            // Convert images to Base64 (Optimized for Speed: Top 2)
-            for (const url of imageUrls.slice(0, 2)) {
+            // Target Front, Rear, Engine, Dash + 4 Damage Photos
+            const targets = imageUrls.slice(0, 10); 
+            for (const url of targets) {
                 try {
-                    const proxyUrl = `https://images.weserv.nl/?url=${encodeURIComponent(url.replace('https://', ''))}&w=800&h=600&output=jpg`;
-                    const imgResp = await fetch(proxyUrl);
-                    const blob = await imgResp.blob();
-                    const b64 = await new Promise((resolve) => {
-                        const reader = new FileReader();
-                        reader.onloadend = () => resolve(reader.result);
-                        reader.readAsDataURL(blob);
-                    });
+                    const b64 = await resizeImage(url);
                     imageData.push(b64);
-                    tray.innerHTML += `<img src="${b64}" style="height: 50px; border-radius: 4px; border: 1px solid #444;">`;
+                    tray.innerHTML += `<img src="${b64}" style="height: 40px; border-radius: 4px;">`;
                 } catch (e) { continue; }
             }
 
-            status.innerText = "Deep AI Engine Analyzing (v1.4.0)...";
-
+            status.innerText = "Assessor Engine Running (v1.4.1)...";
             try {
                 const resp = await fetch('/api/analyze-vehicle', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({
-                        image_data: imageData,
-                        model_name: modelName,
-                        starts_status: startsStatus
-                    })
+                    body: JSON.stringify({ image_data: imageData, model_name: modelName, starts_status: startsStatus })
                 });
                 const data = await resp.json();
-                
                 if (data.success) {
-                    status.innerHTML = `<span style="color: var(--accent-green);">✅ Assessor Report Ready</span>`;
+                    status.innerHTML = `<span style="color: var(--accent-green);">✅ Assessment Complete</span>`;
+                    report.style.display = 'block';
+                    reportText.innerText = data.detailed_report || data.insight;
+                    if (data.market_retail > 10000) document.getElementById('clean-arv').value = data.market_retail;
                     
-                    // Only update if AI found a better value than our heuristic
-                    if (data.market_retail > 10000) {
-                        document.getElementById('clean-arv').value = data.market_retail;
-                    }
-
-                    document.getElementById('pro-insight-txt').innerText = data.insight;
                     data.damages.forEach(id => {
                         const cb = document.getElementById(id);
                         if (cb) { cb.checked = true; cb.parentElement.classList.add('checked'); }
                     });
                     recalculate();
                 } else {
-                    status.innerHTML = `<span style="color: var(--accent-red);">⚠️ AI Engine Busy. Using Manual Estimate.</span>`;
-                    recalculate();
+                    status.innerHTML = `<span style="color: var(--accent-red);">⚠️ AI Busy. Using Safety Estimates.</span>`;
                 }
-            } catch (e) {
-                status.innerHTML = `<span style="color: var(--accent-red);">⚠️ Connection Lag. Using Safety Net.</span>`;
-                recalculate();
-            }
+            } catch (e) { status.innerText = "AI Offline"; }
         }
 
         function recalculate() {
             const cleanArv = parseFloat(document.getElementById('clean-arv').value) || 0;
             const auctionHouse = document.getElementById('auction-house').value;
-
             let repairs = 0;
             if (document.getElementById('bumper-rep').checked) repairs += 6000;
             if (document.getElementById('airbags-rep').checked) repairs += 8000;
@@ -270,44 +242,29 @@
             if (document.getElementById('paint-rep').checked) repairs += 3500;
             document.getElementById('display-repair-total').innerText = 'R ' + repairs.toLocaleString();
 
-            // Auction Nation: 5% + VAT (5.75%) | R1500 + VAT (R1725)
             let commRate = 0.0575, admin = 1725;
             if (auctionHouse === 'smd') { commRate = 0.092; admin = 2875; }
 
-            const arv = cleanArv * 0.8; // Code 2 Penalty (20%)
+            const arv = cleanArv * 0.8; 
             const targetRoi = 0.19;
-            const logistics = 3000;
-
-            // Target Cost = ARV / (1+ROI)
-            const targetTotalCost = arv / (1 + targetRoi);
-            const hammer = (targetTotalCost - admin - repairs - logistics) / (1 + commRate);
+            const hammer = ( (arv / (1 + targetRoi)) - admin - repairs - 3000) / (1 + commRate);
             const finalHammer = Math.max(0, Math.floor(hammer));
-            
             document.getElementById('tgt-bid-val').innerText = 'R ' + finalHammer.toLocaleString();
 
             const comm = finalHammer * commRate;
-            const totalOut = finalHammer + comm + admin + repairs + logistics;
-            const profit = arv - totalOut;
-
+            const profit = arv - (finalHammer + comm + admin + repairs + 3000);
             const waterfall = document.getElementById('profit-waterfall');
             waterfall.innerHTML = `
                 <div class="wf-item"><span>Hammer Price</span><span>R ${finalHammer.toLocaleString()}</span></div>
-                <div class="wf-item"><span>Auction Fee (Incl. VAT)</span><span class="neg">- R ${Math.floor(comm).toLocaleString()}</span></div>
-                <div class="wf-item"><span>Admin Fee (Incl. VAT)</span><span class="neg">- R ${admin.toLocaleString()}</span></div>
-                <div class="wf-item"><span>Estimated Repairs</span><span class="neg">- R ${repairs.toLocaleString()}</span></div>
-                <div class="wf-item"><span>Logistics & Arrears</span><span class="neg">- R ${logistics.toLocaleString()}</span></div>
-                <div class="wf-item"><span>Projected Sale Price (ARV)</span><span>R ${arv.toLocaleString()}</span></div>
+                <div class="wf-item"><span>Fees (Incl. VAT)</span><span class="neg">- R ${Math.floor(comm + admin).toLocaleString()}</span></div>
+                <div class="wf-item"><span>Repairs</span><span class="neg">- R ${repairs.toLocaleString()}</span></div>
+                <div class="wf-item"><span>Sale Price (ARV)</span><span>R ${arv.toLocaleString()}</span></div>
                 <div class="wf-item total"><span>Est. Net Profit</span><span class="pos">R ${Math.floor(profit).toLocaleString()}</span></div>
             `;
             
             const vWrapper = document.getElementById('verdict-wrapper');
-            if (profit < 10000) {
-                vWrapper.style.borderColor = 'var(--accent-red)';
-                vWrapper.innerHTML = `<h2 style="color: var(--accent-red);">THIN MARGINS</h2><p style="font-size: 0.85rem;">Profit below R10k. Walk away.</p>`;
-            } else {
-                vWrapper.style.borderColor = 'var(--accent-green)';
-                vWrapper.innerHTML = `<h2 style="color: var(--accent-green);">GREEN SIGNAL</h2><p style="font-size: 0.85rem;">Healthy margins. Bidding authorized.</p>`;
-            }
+            if (profit > 12000) { vWrapper.style.borderColor = 'var(--accent-green)'; vWrapper.innerHTML = `<h2 style="color: var(--accent-green);">GREEN SIGNAL</h2><p style="font-size: 0.8rem;">Healthy profit margin detected.</p>`; }
+            else { vWrapper.style.borderColor = 'var(--accent-red)'; vWrapper.innerHTML = `<h2 style="color: var(--accent-red);">THIN MARGIN</h2><p style="font-size: 0.8rem;">Risk exceeds profit. Caution.</p>`; }
         }
 
         document.getElementById('clean-arv').addEventListener('input', recalculate);

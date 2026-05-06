@@ -505,7 +505,7 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <h1>APEX v1.2.4</h1>
+                <h1>APEX v1.2.5</h1>
                 <p>Personal Car Auction Intelligence System for Rishen | Cape Town</p>
             </div>
             <div class="currency-badge">ZAR / South Africa</div>
@@ -1193,7 +1193,9 @@
 
                     // Show images being processed
                     const tray = document.getElementById('ai-image-tray');
-                    tray.innerHTML = imageUrls.slice(0, 5).map(url => `<img src="${url}" style="height: 60px; border-radius: 4px; border: 1px solid var(--border);">`).join('');
+                    if (tray) {
+                        tray.innerHTML = imageUrls.slice(0, 5).map(url => `<img src="${url}" style="height: 60px; border-radius: 4px; border: 1px solid var(--border);">`).join('');
+                    }
 
                     data.damages.forEach(id => {
                         const cb = document.getElementById(id);
@@ -1203,6 +1205,8 @@
                         }
                     });
                     aiFindingsText.innerText = `Deep Scan Result: ${data.insight}`;
+                    
+                    // FORCE RECALCULATE
                     recalculate();
                 }
             } catch (err) {

@@ -230,10 +230,16 @@ async def analyze_vehicle(
             # Clean possible markdown block
             raw_text = response.text.replace("```json", "").replace("```", "").strip()
             data = json.loads(raw_text)
+            
+            # Robust market_retail parsing (handle "R 120,000" or 120000)
+            m_retail_raw = str(data.get("market_retail", "0"))
+            m_retail_clean = "".join(filter(str.isdigit, m_retail_raw))
+            m_retail = int(m_retail_clean) if m_retail_clean else 0
+
             return {
                 "success": True, 
                 "damages": data.get("damages", []), 
-                "market_retail": data.get("market_retail", 0),
+                "market_retail": m_retail,
                 "insight": data.get("insight", "")
             }
         except Exception as e:

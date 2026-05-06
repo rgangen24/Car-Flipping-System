@@ -23,6 +23,7 @@ class AuctionURL(BaseModel):
 class AnalysisRequest(BaseModel):
     image_data: Optional[List[str]] = None  # Base64 strings
     model_name: Optional[str] = "Unknown Vehicle"
+    year: Optional[int] = 2018
     starts_status: Optional[str] = "Unknown"
 
 @app.get("/", response_class=HTMLResponse)
@@ -32,7 +33,7 @@ async def read_root():
 
 @app.get("/api/health")
 async def health_check():
-    return {"status": "APEX AI Engine Online", "v": "1.4.1", "has_key": API_KEY is not None}
+    return {"status": "APEX AI Engine Online", "v": "1.4.2", "has_key": API_KEY is not None}
 
 @app.post("/api/fetch-auction-data")
 async def fetch_auction_data(data: AuctionURL):
@@ -45,14 +46,17 @@ async def fetch_auction_data(data: AuctionURL):
             
             soup = BeautifulSoup(response.text, 'html.parser')
             title = soup.find(id='vehTitle').text.strip() if soup.find(id='vehTitle') else "Unknown"
-            year = soup.find(id='vehYear').text.strip() if soup.find(id='vehYear') else "2018"
+            year_val = 2018
+            year_tag = soup.find(id='vehYear')
+            if year_tag:
+                try: year_val = int(year_tag.text.strip())
+                except: pass
+            
             starts = "YES" if 'check' in str(soup.find(id='vehStarts')).lower() else "NO"
             
-            # EXTRACT ALL IMAGES (360 + Additional + Mechanical)
+            # EXTRACT ALL IMAGES
             image_urls = []
             base_url = ""
-            
-            # Find the base URL from any image
             for img in soup.find_all('img'):
                 src = img.get('src', '')
                 if 'cloudfront.net' in src and '/Photos/' in src:
@@ -60,18 +64,13 @@ async def fetch_auction_data(data: AuctionURL):
                     break
             
             if base_url:
-                # Add 360 Set
-                image_urls.extend([f"{base_url}360/Front.jpg", f"{base_url}360/Rear.jpg", f"{base_url}360/Side_Left.jpg", f"{base_url}360/Side_Right.jpg"])
-                # Add Mechanical
-                image_urls.extend([f"{base_url}360/Dash.jpg", f"{base_url}360/Engine_All.jpg", f"{base_url}360/Under_Vehicle.jpg"])
-                # Add Additional (Top 10)
-                for i in range(1, 11):
-                    image_urls.append(f"{base_url}360/Additional_{i}.jpg")
+                image_urls.extend([f"{base_url}360/Front.jpg", f"{base_url}360/Rear.jpg", f"{base_url}360/Dash.jpg", f"{base_url}360/Engine_All.jpg"])
+                for i in range(1, 10): image_urls.append(f"{base_url}360/Additional_{i}.jpg")
             
             return {
                 "success": True,
                 "model": title,
-                "year": year,
+                "year": year_val,
                 "starts": starts,
                 "image_urls": image_urls
             }
@@ -85,33 +84,33 @@ async def analyze_vehicle(request_data: AnalysisRequest = Body(...)):
 
     parts = []
     if request_data.image_data:
-        for b64 in request_data.image_data[:10]: # Analyze top 10
+        for b64 in request_data.image_data[:6]: # Optimized to 6 images for Vercel speed
             try:
                 if "," in b64: b64 = b64.split(",")[1]
                 parts.append(types.Part.from_bytes(data=base64.b64decode(b64), mime_type="image/jpeg"))
             except: continue
 
-    if not parts:
-        return {"success": False, "error": "No Images Processed"}
-
+    # Prompt now includes a UNIVERSAL VALUATION requirement
     prompt = f"""
-    You are a Senior Salvage Assessor. Analyze these photos for a {request_data.model_name}.
+    You are a Senior Salvage Assessor in South Africa. 
+    Analyze this {request_data.year} {request_data.model_name}. 
     Listing Status: Starts: {request_data.starts_status}.
     
-    1. DAMAGES: Check: (bumper-rep, frontend-rep, paint-rep, airbags-rep).
-    2. REASONING: Explain EXACTLY what you see (panels, engine bay, interior).
-    3. ARV: Estimate clean retail in ZAR.
+    TASK:
+    1. ARV: Even if photos are missing, what is the CLEAN MARKET RETAIL for this car in ZAR?
+    2. DAMAGES: Identify: (bumper-rep, frontend-rep, paint-rep, airbags-rep).
+    3. DETAILED REPORT: Explain what you see or what is likely wrong.
     
     Return raw JSON ONLY:
-    {{"damages": ["..."], "market_retail": 140000, "insight": "...", "detailed_report": "..."}}
+    {{"damages": ["..."], "market_retail": 125000, "insight": "...", "detailed_report": "..."}}
     """
 
     try:
         response = client.models.generate_content(
             model='gemini-2.0-flash',
-            contents=[prompt, *parts],
+            contents=[prompt, *parts] if parts else [prompt],
             config=types.GenerateContentConfig(response_mime_type='application/json')
         )
         return {"success": True, **json.loads(response.text)}
     except Exception as e:
-        return {"success": False, "error": str(e)}
+        return {"success": False, "error": f"AI Engine Timeout: {str(e)}"}

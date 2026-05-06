@@ -1,6 +1,7 @@
 fastapi
 uvicorn
-python-multipart
-google-generativeai
 httpx
 beautifulsoup4
+google-genai
+python-multipart
+pydantic

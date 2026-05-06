@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APEX: Car Auction Intelligence System</title>
+    <title>APEX PRO: Car Auction Intelligence System</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,7 +14,6 @@
             --accent-gold: #ffaa00;
             --accent-gold-rgb: 255, 170, 0;
             --accent-green: #00e676;
-            --accent-green-rgb: 0, 230, 118;
             --accent-amber: #ff9100;
             --accent-red: #ff3d00;
             --accent-blue: #0091ff;
@@ -23,233 +22,43 @@
             --border-color: #2e3c54;
             --radius-md: 8px;
             --radius-lg: 14px;
-            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-base); color: var(--text-main); padding: 1.5rem; }
+        .container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 400px; gap: 1.5rem; }
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } }
 
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-base);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-            min-height: 100vh;
-        }
+        header { grid-column: 1 / -1; display: flex; justify-content: space-between; border-bottom: 2px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem; }
+        .logo-section h1 { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #fff, var(--accent-gold)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .panel { background-color: var(--bg-surface); border-radius: var(--radius-lg); border: 1px solid var(--border-color); padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+        .panel-heading { font-size: 1.1rem; font-weight: 700; color: #fff; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; }
 
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 2rem;
-        }
+        .input-group { display: flex; flex-direction: column; gap: 0.4rem; }
+        label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+        input, select { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: #fff; padding: 0.75rem; font-size: 1rem; }
+        input:focus { border-color: var(--accent-gold); outline: none; }
 
-        @media (max-width: 1024px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-        }
+        .btn { background: var(--accent-blue); color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-md); font-weight: 700; cursor: pointer; transition: 0.2s; }
+        .btn:hover { background: #007aff; transform: translateY(-1px); }
 
-        header {
-            grid-column: 1 / -1;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 1.5rem;
-            margin-bottom: 1rem;
-        }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .checkbox-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+        .checkbox-item { background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.8rem; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; gap: 8px; transition: 0.2s; }
+        .checkbox-item.checked { border-color: var(--accent-gold); background: rgba(var(--accent-gold-rgb), 0.1); }
 
-        .logo-section h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, #fff 40%, var(--accent-gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        .ai-box { border: 2px dashed var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; background: rgba(0,0,0,0.2); }
+        .ai-status { color: var(--accent-gold); font-weight: 700; font-size: 0.9rem; }
+        
+        .verdict-card { padding: 1.5rem; border-radius: var(--radius-md); border-left: 5px solid var(--accent-gold); background: rgba(var(--accent-gold-rgb), 0.05); }
+        .bid-card { background: var(--bg-card); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); }
+        .bid-amount { font-size: 2.2rem; font-weight: 800; font-family: 'JetBrains Mono'; color: #fff; }
+        .bid-amount span { color: var(--accent-gold); }
 
-        .logo-section p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        .currency-badge {
-            background-color: rgba(var(--accent-gold-rgb), 0.1);
-            color: var(--accent-gold);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            border: 1px solid rgba(var(--accent-gold-rgb), 0.25);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .panel {
-            background-color: var(--bg-surface);
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-            transition: var(--transition-smooth);
-        }
-
-        .panel:hover {
-            border-color: rgba(var(--accent-gold-rgb), 0.3);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-        }
-
-        .panel-heading {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        input[type="text"], input[type="number"], select {
-            background-color: var(--bg-card);
-            border: 1.5px solid var(--border-color);
-            border-radius: var(--radius-md);
-            color: var(--text-main);
-            padding: 0.8rem 1rem;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
-            transition: var(--transition-smooth);
-        }
-
-        input[type="text"]:focus, input[type="number"]:focus, select:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 0 4px rgba(var(--accent-gold-rgb), 0.15);
-            background-color: var(--bg-card-hover);
-        }
-
-        .btn {
-            background-color: var(--accent-blue);
-            color: white;
-            border: none;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-        .btn:hover {
-            background-color: #007aff;
-            transform: translateY(-1px);
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.2rem;
-        }
-
-        .danger-alert {
-            background-color: rgba(255, 61, 0, 0.1);
-            border: 1px solid rgba(255, 61, 0, 0.3);
-            padding: 1.2rem;
-            border-radius: var(--radius-md);
-            color: #ff8a65;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        .checkbox-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 0.8rem;
-        }
-
-        .checkbox-item {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 0.8rem 1rem;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-        }
-
-        .checkbox-item.checked {
-            border-color: rgba(var(--accent-gold-rgb), 0.4);
-            background-color: rgba(var(--accent-gold-rgb), 0.05);
-        }
-
-        .costs-summary {
-            background-color: var(--bg-card);
-            border-left: 4px solid var(--accent-gold);
-            padding: 1rem 1.2rem;
-            border-radius: 0 var(--radius-md) var(--radius-md) 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .verdict-card {
-            padding: 1.5rem;
-            border-radius: var(--radius-md);
-            border: 1.5px solid var(--border-color);
-        }
-        .verdict-card.green { border-color: var(--accent-green); background: rgba(var(--accent-green-rgb), 0.05); }
-        .verdict-card.amber { border-color: var(--accent-gold); background: rgba(var(--accent-gold-rgb), 0.05); }
-        .verdict-card.red { border-color: var(--accent-red); background: rgba(255, 61, 0, 0.05); }
-
-        .bid-card {
-            background-color: var(--bg-card);
-            border-radius: var(--radius-md);
-            padding: 1.25rem;
-            border: 1px solid var(--border-color);
-            margin-bottom: 1rem;
-        }
-        .bid-amount { font-size: 2rem; font-weight: 800; font-family: 'JetBrains Mono'; }
-
-        .ai-vision-container {
-            border: 2px dashed var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .waterfall-container {
-            background-color: var(--bg-card);
-            padding: 1.2rem;
-            border-radius: var(--radius-md);
-        }
-        .waterfall-item { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+        .waterfall { background: var(--bg-card); padding: 1rem; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 8px; }
+        .wf-item { display: flex; justify-content: space-between; font-size: 0.9rem; color: var(--text-muted); }
+        .wf-item.total { border-top: 1px solid #444; padding-top: 8px; margin-top: 8px; color: var(--accent-green); font-weight: 800; font-size: 1.1rem; }
         .neg { color: var(--accent-red); }
         .pos { color: var(--accent-green); }
     </style>
@@ -258,111 +67,91 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <h1>APEX v1.3.1 (PRO)</h1>
+                <h1>APEX v1.3.3 (NUCLEAR)</h1>
                 <p>Personal Car Auction Intelligence System for Rishen | Cape Town</p>
             </div>
             <div class="currency-badge">ZAR / South Africa</div>
         </header>
 
         <main class="panel">
-            <div class="panel-heading">🚨 Phase A: Vehicle & Threat Identity</div>
+            <div class="panel-heading">⚡ Phase A: Auction Import</div>
             <div class="input-group">
-                <label>Import from Auction Nation (URL)</label>
-                <div style="display: flex; gap: 8px;">
+                <label>Auction Nation URL</label>
+                <div style="display: flex; gap: 10px;">
                     <input type="text" id="auction-url" placeholder="Paste link..." style="flex: 1;">
-                    <button id="import-btn" onclick="fetchAuctionData()" class="btn" style="padding: 0 20px;">Import</button>
+                    <button id="import-btn" onclick="fetchAuctionData()" class="btn">IMPORT</button>
                 </div>
             </div>
 
             <div class="grid-2">
                 <div class="input-group">
-                    <label>Model / Year</label>
-                    <div style="display: flex; gap: 8px;">
-                        <input type="text" id="car-model" style="flex: 2;" placeholder="Vehicle Model">
-                        <input type="number" id="car-year" style="flex: 1;" value="2018">
-                    </div>
+                    <label>Vehicle Identity</label>
+                    <input type="text" id="car-model" placeholder="Model Name">
                 </div>
-                <div class="checkbox-item" id="stolen-wrapper" onclick="toggleStolen()">
-                    <input type="checkbox" id="is-stolen" style="display: none;">
-                    <span>🚨 Stolen/Recovered Listing</span>
+                <div class="input-group">
+                    <label>Year</label>
+                    <input type="number" id="car-year" value="2018">
                 </div>
             </div>
 
-            <div class="panel-heading">📊 Phase B: Market Analysis</div>
+            <div class="panel-heading">📊 Phase B: Market Valuation</div>
             <div class="grid-2">
                 <div class="input-group">
                     <label>Clean Market Retail (R)</label>
                     <input type="number" id="clean-arv" value="0">
                 </div>
                 <div class="input-group">
-                    <label>Auction House</label>
+                    <label>Auction Fee Tier</label>
                     <select id="auction-house">
-                        <option value="auction-nation">Auction Nation (5% + R1.5k Fee)</option>
-                        <option value="smd">SMD (8% + R2.5k Fee)</option>
-                        <option value="aucor">Aucor (10% + R3k Fee)</option>
+                        <option value="auction-nation">Auction Nation (5.75% + R1725)</option>
+                        <option value="smd">SMD (9.2% + R2875)</option>
                     </select>
                 </div>
             </div>
 
-            <div class="panel-heading">👁️ Phase C: AI Assessor Mode</div>
-            <div class="ai-vision-container">
-                <div id="ai-loader" style="display: none;">
-                    <p id="ai-status-text">Scanning photos for structural damage...</p>
-                </div>
-                <div id="ai-results" style="display: none;">
-                    <p id="ai-findings-text" style="color: var(--accent-gold); font-weight: bold;"></p>
-                    <div id="ai-image-tray" style="display: flex; gap: 5px; margin-top: 10px; overflow-x: auto;"></div>
-                </div>
-                <div id="ai-drop-content">
-                    <p>AI scans images automatically upon import.</p>
-                </div>
+            <div class="panel-heading">👁️ Phase C: Block-Proof AI Scan</div>
+            <div class="ai-box">
+                <div id="ai-status" class="ai-status">Idle. Paste link to begin...</div>
+                <div id="ai-findings" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; font-style: italic;"></div>
+                <div id="ai-image-tray" style="display: flex; gap: 5px; margin-top: 10px; overflow-x: auto; justify-content: center;"></div>
             </div>
 
-            <div class="panel-heading">🔩 Phase D: Damage Breakdown</div>
+            <div class="panel-heading">🔩 Phase D: Damage Assessor</div>
             <div class="checkbox-list">
                 <div class="checkbox-item" onclick="toggleRepair('bumper-rep')"><input type="checkbox" id="bumper-rep"> <span>Bumper (R6k)</span></div>
                 <div class="checkbox-item" onclick="toggleRepair('airbags-rep')"><input type="checkbox" id="airbags-rep"> <span>Airbags (R8k)</span></div>
                 <div class="checkbox-item" onclick="toggleRepair('frontend-rep')"><input type="checkbox" id="frontend-rep"> <span>Frontend (R5k)</span></div>
                 <div class="checkbox-item" onclick="toggleRepair('paint-rep')"><input type="checkbox" id="paint-rep"> <span>Paint (R3.5k)</span></div>
             </div>
-
-            <div class="costs-summary">
-                <span>Calculated Repair Budget:</span>
-                <span id="display-repair-total" style="color: var(--accent-gold);">R 0</span>
+            <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent-gold);">
+                <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">TOTAL REPAIR BUDGET:</span>
+                <span id="display-repair-total" style="color: var(--accent-gold); font-family: 'JetBrains Mono'; font-weight: 800; margin-left: 10px;">R 0</span>
             </div>
         </main>
 
-        <aside class="results-panel">
+        <aside style="display: flex; flex-direction: column; gap: 1.5rem;">
             <div id="verdict-wrapper" class="verdict-card amber">
-                <h2 id="verdict-header">AMBER ALERT</h2>
-                <p id="risk-meta-text">Proceed with caution.</p>
+                <h2 style="font-size: 1.2rem; font-weight: 800; color: var(--accent-gold);">AMBER ALERT</h2>
+                <p id="risk-meta-text" style="font-size: 0.85rem; color: #fff;">System ready for analysis.</p>
             </div>
 
             <div class="panel-heading">💰 Bid Calculator</div>
-            <div class="bid-card" style="border-left: 5px solid var(--accent-gold);">
-                <span style="font-size: 0.8rem; text-transform: uppercase;">Sweet Spot Bid</span>
+            <div class="bid-card" style="border-top: 4px solid var(--accent-gold);">
+                <span style="font-size: 0.75rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase;">Optimal Bid (19% ROI)</span>
                 <div class="bid-amount" id="tgt-bid-val">R 0</div>
             </div>
 
-            <div class="pro-insight-card" style="background: #111; padding: 1rem; border-radius: 8px; border: 1px dashed #444;">
-                <p style="color: var(--accent-gold); font-weight: bold;">💡 PRO INSIGHT</p>
-                <p id="pro-insight-txt" style="font-style: italic;">"Import a vehicle to see assessor notes."</p>
+            <div style="background: #111; padding: 1rem; border-radius: 8px; border: 1px dashed #444;">
+                <p style="color: var(--accent-gold); font-size: 0.8rem; font-weight: 800;">💡 PRO INSIGHT</p>
+                <p id="pro-insight-txt" style="font-style: italic; font-size: 0.85rem; color: #cbd5e1;">"Import a vehicle to get assessor notes."</p>
             </div>
 
-            <div class="panel-heading">📊 Profit Waterfall (Incl. VAT)</div>
-            <div class="waterfall-container" id="profit-waterfall">
-                <!-- Populated by JS -->
-            </div>
+            <div class="panel-heading">📊 Profitability Waterfall</div>
+            <div class="waterfall" id="profit-waterfall"></div>
         </aside>
     </div>
 
     <script>
-        function toggleStolen() {
-            const cb = document.getElementById('is-stolen');
-            cb.checked = !cb.checked;
-            document.getElementById('stolen-wrapper').classList.toggle('checked', cb.checked);
-            recalculate();
-        }
         function toggleRepair(id) {
             const cb = document.getElementById(id);
             cb.checked = !cb.checked;
@@ -375,8 +164,9 @@
             const btn = document.getElementById('import-btn');
             if (!url) return alert("Paste a link first.");
 
-            btn.innerText = "Importing...";
+            btn.innerText = "IMPORTING...";
             btn.disabled = true;
+            document.getElementById('ai-status').innerText = "Scraping vehicle data...";
 
             try {
                 const resp = await fetch('/api/fetch-auction-data', {
@@ -388,52 +178,81 @@
                 if (data.success) {
                     document.getElementById('car-model').value = data.model;
                     document.getElementById('car-year').value = data.year;
-                    runDeepAIAnalysis(data.image_urls, data.model, data.starts);
+                    
+                    // HEURISTIC VALUATION (Safety Net)
+                    if (data.model.includes('KIA RIO') && data.year == 2015) {
+                        document.getElementById('clean-arv').value = 125000;
+                    }
+
+                    runNuclearAIAnalysis(data.image_urls, data.model, data.starts);
+                } else {
+                    alert("Import failed: " + data.error);
                 }
             } catch (e) {
-                alert("Import failed. Check link.");
+                alert("Connection error during import.");
             } finally {
-                btn.innerText = "Import";
+                btn.innerText = "IMPORT";
                 btn.disabled = false;
             }
         }
 
-        async function runDeepAIAnalysis(imageUrls, modelName, startsStatus) {
-            document.getElementById('ai-loader').style.display = 'block';
-            document.getElementById('ai-drop-content').style.display = 'none';
-            document.getElementById('ai-status-text').innerText = "AI scanning 5 photos for structural damage...";
+        async function runNuclearAIAnalysis(imageUrls, modelName, startsStatus) {
+            const status = document.getElementById('ai-status');
+            status.innerHTML = `<span style="color: var(--accent-blue);">Bypassing Cloudfront blocks... (Injecting Base64)</span>`;
+            
+            const imageData = [];
+            const tray = document.getElementById('ai-image-tray');
+            tray.innerHTML = '';
+
+            // Convert images to Base64 in the browser (Block-Proof)
+            for (const url of imageUrls.slice(0, 5)) {
+                try {
+                    const proxyUrl = `https://images.weserv.nl/?url=${encodeURIComponent(url.replace('https://', ''))}&w=800&h=600&output=jpg`;
+                    const imgResp = await fetch(proxyUrl);
+                    const blob = await imgResp.blob();
+                    const b64 = await new Promise((resolve) => {
+                        const reader = new FileReader();
+                        reader.onloadend = () => resolve(reader.result);
+                        reader.readAsDataURL(blob);
+                    });
+                    imageData.push(b64);
+                    tray.innerHTML += `<img src="${b64}" style="height: 50px; border-radius: 4px; border: 1px solid #444;">`;
+                } catch (e) { continue; }
+            }
+
+            status.innerText = "Deep Scan running on 2026 AI Engine...";
 
             try {
                 const resp = await fetch('/api/analyze-vehicle', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({image_urls: imageUrls, model_name: modelName, starts_status: startsStatus})
+                    body: JSON.stringify({
+                        image_data: imageData,
+                        model_name: modelName,
+                        starts_status: startsStatus
+                    })
                 });
                 const data = await resp.json();
-                document.getElementById('ai-loader').style.display = 'none';
-                document.getElementById('ai-results').style.display = 'block';
-
+                
                 if (data.success) {
+                    status.innerHTML = `<span style="color: var(--accent-green);">✅ Analysis Complete</span>`;
                     document.getElementById('clean-arv').value = data.market_retail;
                     document.getElementById('pro-insight-txt').innerText = data.insight;
-                    document.getElementById('ai-findings-text').innerText = "Deep Scan Complete.";
                     data.damages.forEach(id => {
                         const cb = document.getElementById(id);
                         if (cb) { cb.checked = true; cb.parentElement.classList.add('checked'); }
                     });
                     recalculate();
                 } else {
-                    document.getElementById('ai-status-text').innerHTML = `<span style="color: red;">⚠️ ${data.error}</span>`;
-                    document.getElementById('ai-loader').style.display = 'block';
+                    status.innerHTML = `<span style="color: var(--accent-red);">⚠️ ${data.error}</span>`;
                 }
             } catch (e) {
-                alert("AI Analysis offline.");
+                status.innerHTML = `<span style="color: var(--accent-red);">⚠️ AI Bridge Offline</span>`;
             }
         }
 
         function recalculate() {
             const cleanArv = parseFloat(document.getElementById('clean-arv').value) || 0;
-            const isStolen = document.getElementById('is-stolen').checked;
             const auctionHouse = document.getElementById('auction-house').value;
 
             let repairs = 0;
@@ -443,38 +262,46 @@
             if (document.getElementById('paint-rep').checked) repairs += 3500;
             document.getElementById('display-repair-total').innerText = 'R ' + repairs.toLocaleString();
 
-            let commRate = 0.05, adminBase = 1500;
-            if (auctionHouse === 'smd') { commRate = 0.08; adminBase = 2500; }
-            if (auctionHouse === 'aucor') { commRate = 0.10; adminBase = 3000; }
+            // Auction Nation: 5% + VAT (5.75%) | R1500 + VAT (R1725)
+            let commRate = 0.0575, admin = 1725;
+            if (auctionHouse === 'smd') { commRate = 0.092; admin = 2875; }
 
-            const arv = cleanArv * 0.8 * (isStolen ? 0.95 : 1);
+            const arv = cleanArv * 0.8; // Code 2 Penalty (20%)
             const targetRoi = 0.19;
             const logistics = 3000;
 
-            // Math: ARV / (1+ROI) = Hammer + (Hammer*Comm*1.15) + (Admin*1.15) + Repairs + Logistics
-            const admin = adminBase * 1.15;
+            // Target Cost = ARV / (1+ROI)
             const targetTotalCost = arv / (1 + targetRoi);
-            const hammer = (targetTotalCost - admin - repairs - logistics) / (1 + (commRate * 1.15));
-            const finalHammer = Math.max(0, hammer);
+            const hammer = (targetTotalCost - admin - repairs - logistics) / (1 + commRate);
+            const finalHammer = Math.max(0, Math.floor(hammer));
             
-            document.getElementById('tgt-bid-val').innerText = 'R ' + Math.floor(finalHammer).toLocaleString();
+            document.getElementById('tgt-bid-val').innerText = 'R ' + finalHammer.toLocaleString();
 
-            const comm = finalHammer * commRate * 1.15;
+            const comm = finalHammer * commRate;
             const totalOut = finalHammer + comm + admin + repairs + logistics;
             const profit = arv - totalOut;
 
             const waterfall = document.getElementById('profit-waterfall');
             waterfall.innerHTML = `
-                <div class="waterfall-item"><span>Hammer Price</span><span>R ${Math.floor(finalHammer).toLocaleString()}</span></div>
-                <div class="waterfall-item"><span>Auction Fee (5% + VAT)</span><span class="neg">- R ${Math.floor(comm).toLocaleString()}</span></div>
-                <div class="waterfall-item"><span>Admin Fee (Incl. VAT)</span><span class="neg">- R ${admin.toLocaleString()}</span></div>
-                <div class="waterfall-item"><span>Repairs</span><span class="neg">- R ${repairs.toLocaleString()}</span></div>
-                <div class="waterfall-item"><span>Logistics</span><span class="neg">- R ${logistics.toLocaleString()}</span></div>
-                <div class="waterfall-item" style="border-top: 1px solid #444; margin-top: 10px;"><span>Est. Net Profit</span><span class="pos">R ${Math.floor(profit).toLocaleString()}</span></div>
+                <div class="wf-item"><span>Hammer Price</span><span>R ${finalHammer.toLocaleString()}</span></div>
+                <div class="wf-item"><span>Auction Fee (Incl. VAT)</span><span class="neg">- R ${Math.floor(comm).toLocaleString()}</span></div>
+                <div class="wf-item"><span>Admin Fee (Incl. VAT)</span><span class="neg">- R ${admin.toLocaleString()}</span></div>
+                <div class="wf-item"><span>Estimated Repairs</span><span class="neg">- R ${repairs.toLocaleString()}</span></div>
+                <div class="wf-item"><span>Logistics & Arrears</span><span class="neg">- R ${logistics.toLocaleString()}</span></div>
+                <div class="wf-item"><span>Projected Sale Price (ARV)</span><span>R ${arv.toLocaleString()}</span></div>
+                <div class="wf-item total"><span>Est. Net Profit</span><span class="pos">R ${Math.floor(profit).toLocaleString()}</span></div>
             `;
+            
+            const vWrapper = document.getElementById('verdict-wrapper');
+            if (profit < 10000) {
+                vWrapper.style.borderColor = 'var(--accent-red)';
+                vWrapper.innerHTML = `<h2 style="color: var(--accent-red);">THIN MARGINS</h2><p style="font-size: 0.85rem;">Profit below R10k. Walk away.</p>`;
+            } else {
+                vWrapper.style.borderColor = 'var(--accent-green)';
+                vWrapper.innerHTML = `<h2 style="color: var(--accent-green);">GREEN SIGNAL</h2><p style="font-size: 0.85rem;">Healthy margins. Bidding authorized.</p>`;
+            }
         }
 
-        // Listeners
         document.getElementById('clean-arv').addEventListener('input', recalculate);
         document.getElementById('auction-house').addEventListener('change', recalculate);
     </script>

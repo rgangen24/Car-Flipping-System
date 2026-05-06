@@ -4,6 +4,7 @@ import re
 import tempfile
 from typing import List, Optional
 from fastapi import FastAPI, File, UploadFile, Body
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import httpx
 from bs4 import BeautifulSoup
@@ -24,9 +25,14 @@ class AnalysisRequest(BaseModel):
     model_name: Optional[str] = "Unknown Vehicle"
     starts_status: Optional[str] = "Unknown"
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 async def read_root():
-    return {"status": "APEX AI Engine Online", "v": "1.3.1", "has_key": API_KEY is not None}
+    with open("index.html", "r", encoding="utf-8") as f:
+        return f.read()
+
+@app.get("/api/health")
+async def health_check():
+    return {"status": "APEX AI Engine Online", "v": "1.3.2", "has_key": API_KEY is not None}
 
 @app.post("/api/fetch-auction-data")
 async def fetch_auction_data(data: AuctionURL):

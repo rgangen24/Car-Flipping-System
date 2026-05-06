@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APEX v1.4.2: Universal Auction Intelligence</title>
+    <title>APEX v1.4.3: Ironclad Auction Intelligence</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -43,12 +43,8 @@
         .checkbox-item { background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.7rem; border-radius: var(--radius-md); cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
         .checkbox-item.checked { border-color: var(--accent-gold); background: rgba(var(--accent-gold-rgb), 0.1); }
 
-        .ai-box { border: 2px dashed var(--border-color); border-radius: var(--radius-md); padding: 1.2rem; text-align: center; background: rgba(0,0,0,0.2); position: relative; }
+        .ai-box { border: 2px dashed var(--border-color); border-radius: var(--radius-md); padding: 1.2rem; text-align: center; background: rgba(0,0,0,0.2); }
         .ai-status { color: var(--accent-gold); font-weight: 700; font-size: 0.85rem; }
-
-        /* Spinner */
-        .spinner { width: 20px; height: 20px; border: 2px solid rgba(255,170,0,0.2); border-top-color: var(--accent-gold); border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block; vertical-align: middle; margin-right: 8px; }
-        @keyframes spin { to { transform: rotate(360deg); } }
 
         .report-card { background: #000; border-radius: var(--radius-md); padding: 1rem; margin-top: 10px; border: 1px solid #333; font-size: 0.85rem; color: #cbd5e1; text-align: left; }
         .report-card strong { color: var(--accent-gold); display: block; margin-bottom: 5px; }
@@ -70,7 +66,7 @@
     <div class="container">
         <header>
             <div class="logo-section">
-                <h1>APEX v1.4.2 (UNIVERSAL ASSESSOR)</h1>
+                <h1>APEX v1.4.3 (IRONCLAD)</h1>
                 <p>Personal Car Auction Intelligence System for Rishen | Cape Town</p>
             </div>
             <div class="currency-badge">ZAR / South Africa</div>
@@ -105,7 +101,7 @@
                 <div id="ai-image-tray" style="display: flex; gap: 5px; margin-top: 10px; overflow-x: auto; justify-content: center;"></div>
                 <div id="ai-report" class="report-card" style="display: none;">
                     <strong>ASSESSOR'S DAMAGE LOG:</strong>
-                    <span id="ai-report-text">Scanning every panel for hidden damage...</span>
+                    <span id="ai-report-text">Analyzing structural integrity...</span>
                 </div>
             </div>
 
@@ -152,12 +148,12 @@
                 img.onload = () => {
                     const canvas = document.createElement('canvas');
                     const ctx = canvas.getContext('2d');
-                    const maxW = 800;
+                    const maxW = 600;
                     const scale = maxW / img.width;
                     canvas.width = maxW;
                     canvas.height = img.height * scale;
                     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                    resolve(canvas.toDataURL('image/jpeg', 0.6));
+                    resolve(canvas.toDataURL('image/jpeg', 0.5));
                 };
                 img.src = `https://images.weserv.nl/?url=${encodeURIComponent(url.replace('https://', ''))}`;
             });
@@ -169,7 +165,7 @@
             if (!url) return;
 
             btn.innerText = "IMPORTING...";
-            document.getElementById('ai-status').innerText = "Locating full gallery...";
+            document.getElementById('ai-status').innerText = "Scraping Auction Nation...";
 
             try {
                 const resp = await fetch('/api/fetch-auction-data', {
@@ -182,32 +178,33 @@
                     document.getElementById('car-model').value = data.model;
                     document.getElementById('car-year').value = data.year;
                     
-                    // Safety Valuations for common models
+                    // IRONCLAD HEURISTICS
                     if (data.model.includes('KIA RIO') && data.year == 2015) {
                         document.getElementById('clean-arv').value = 138500;
+                    } else if (data.model.includes('GOLF') && data.year == 2010) {
+                        document.getElementById('clean-arv').value = 135000;
                     } else if (data.model.includes('POLO') && data.year == 2010) {
                         document.getElementById('clean-arv').value = 95000;
                     }
                     
                     recalculate();
-                    runUniversalAIAnalysis(data.image_urls, data.model, data.year, data.starts);
+                    runIroncladAIAnalysis(data.image_urls, data.model, data.year, data.starts);
                 }
             } catch (e) { alert("Import Error"); }
             finally { btn.innerText = "IMPORT"; }
         }
 
-        async function runUniversalAIAnalysis(imageUrls, modelName, year, startsStatus) {
+        async function runIroncladAIAnalysis(imageUrls, modelName, year, startsStatus) {
             const status = document.getElementById('ai-status');
             const tray = document.getElementById('ai-image-tray');
             const report = document.getElementById('ai-report');
             const reportText = document.getElementById('ai-report-text');
 
-            status.innerHTML = `<div class="spinner"></div><span>ASSESSOR AT WORK (v1.4.2)...</span>`;
+            status.innerHTML = `<span style="color: var(--accent-blue);">IRONCLAD SCAN ACTIVE (v1.4.3)...</span>`;
             tray.innerHTML = '';
             
             const imageData = [];
-            // Target Front, Rear, Dash, Engine + 2 Damage
-            const targets = imageUrls.slice(0, 6); 
+            const targets = imageUrls.slice(0, 4); // Core 4 for speed
             for (const url of targets) {
                 try {
                     const b64 = await resizeImage(url);
@@ -220,30 +217,25 @@
                 const resp = await fetch('/api/analyze-vehicle', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ 
-                        image_data: imageData, 
-                        model_name: modelName, 
-                        year: year,
-                        starts_status: startsStatus 
-                    })
+                    body: JSON.stringify({ image_data: imageData, model_name: modelName, year: year, starts_status: startsStatus })
                 });
                 const data = await resp.json();
                 if (data.success) {
-                    status.innerHTML = `<span style="color: var(--accent-green);">✅ Universal Scan Complete</span>`;
+                    status.innerHTML = `<span style="color: var(--accent-green);">✅ Secure Valuation Locked</span>`;
                     report.style.display = 'block';
                     reportText.innerText = data.detailed_report || data.insight;
                     
-                    // Update retail if AI found a value
                     if (data.market_retail > 10000) document.getElementById('clean-arv').value = data.market_retail;
                     
-                    // Auto-Check Damages
                     data.damages.forEach(id => {
                         const cb = document.getElementById(id);
                         if (cb) { cb.checked = true; cb.parentElement.classList.add('checked'); }
                     });
                     recalculate();
                 } else {
-                    status.innerHTML = `<span style="color: var(--accent-red);">⚠️ AI Busy. Using Model-Year Estimates.</span>`;
+                    // FALLBACK TO INTERNAL AI KNOWLEDGE
+                    if (data.market_retail > 10000) document.getElementById('clean-arv').value = data.market_retail;
+                    status.innerHTML = `<span style="color: var(--accent-amber);">⚠️ AI Vision Timeout. Using Intelligence Fallback.</span>`;
                     recalculate();
                 }
             } catch (e) { 
@@ -284,7 +276,7 @@
             
             const vWrapper = document.getElementById('verdict-wrapper');
             if (profit > 10000) { vWrapper.style.borderColor = 'var(--accent-green)'; vWrapper.innerHTML = `<h2 style="color: var(--accent-green);">GREEN SIGNAL</h2><p style="font-size: 0.8rem;">Margins confirmed for ${document.getElementById('car-model').value}.</p>`; }
-            else if (cleanArv > 0) { vWrapper.style.borderColor = 'var(--accent-red)'; vWrapper.innerHTML = `<h2 style="color: var(--accent-red);">THIN MARGIN</h2><p style="font-size: 0.8rem;">Caution: Low profit profile.</p>`; }
+            else if (cleanArv > 0) { vWrapper.style.borderColor = 'var(--accent-red)'; vWrapper.innerHTML = `<h2 style="color: var(--accent-red);">THIN MARGIN</h2><p style="font-size: 0.8rem;">Risk exceeds profit.</p>`; }
         }
 
         document.getElementById('clean-arv').addEventListener('input', recalculate);

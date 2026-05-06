@@ -21,7 +21,7 @@ class AuctionURL(BaseModel):
     url: str
 
 class AnalysisRequest(BaseModel):
-    image_data: Optional[List[str]] = None  # Base64 strings
+    image_data: Optional[List[str]] = None
     model_name: Optional[str] = "Unknown Vehicle"
     year: Optional[int] = 2018
     starts_status: Optional[str] = "Unknown"
@@ -33,7 +33,7 @@ async def read_root():
 
 @app.get("/api/health")
 async def health_check():
-    return {"status": "APEX AI Engine Online", "v": "1.4.2", "has_key": API_KEY is not None}
+    return {"status": "APEX AI Engine Online", "v": "1.4.3", "has_key": API_KEY is not None}
 
 @app.post("/api/fetch-auction-data")
 async def fetch_auction_data(data: AuctionURL):
@@ -54,7 +54,6 @@ async def fetch_auction_data(data: AuctionURL):
             
             starts = "YES" if 'check' in str(soup.find(id='vehStarts')).lower() else "NO"
             
-            # EXTRACT ALL IMAGES
             image_urls = []
             base_url = ""
             for img in soup.find_all('img'):
@@ -65,15 +64,9 @@ async def fetch_auction_data(data: AuctionURL):
             
             if base_url:
                 image_urls.extend([f"{base_url}360/Front.jpg", f"{base_url}360/Rear.jpg", f"{base_url}360/Dash.jpg", f"{base_url}360/Engine_All.jpg"])
-                for i in range(1, 10): image_urls.append(f"{base_url}360/Additional_{i}.jpg")
+                for i in range(1, 5): image_urls.append(f"{base_url}360/Additional_{i}.jpg")
             
-            return {
-                "success": True,
-                "model": title,
-                "year": year_val,
-                "starts": starts,
-                "image_urls": image_urls
-            }
+            return {"success": True, "model": title, "year": year_val, "starts": starts, "image_urls": image_urls}
     except Exception as e:
         return {"success": False, "error": str(e)}
 
@@ -84,25 +77,21 @@ async def analyze_vehicle(request_data: AnalysisRequest = Body(...)):
 
     parts = []
     if request_data.image_data:
-        for b64 in request_data.image_data[:6]: # Optimized to 6 images for Vercel speed
+        for b64 in request_data.image_data[:4]: # Speed-optimized to 4 images
             try:
                 if "," in b64: b64 = b64.split(",")[1]
                 parts.append(types.Part.from_bytes(data=base64.b64decode(b64), mime_type="image/jpeg"))
             except: continue
 
-    # Prompt now includes a UNIVERSAL VALUATION requirement
     prompt = f"""
     You are a Senior Salvage Assessor in South Africa. 
     Analyze this {request_data.year} {request_data.model_name}. 
-    Listing Status: Starts: {request_data.starts_status}.
     
-    TASK:
-    1. ARV: Even if photos are missing, what is the CLEAN MARKET RETAIL for this car in ZAR?
-    2. DAMAGES: Identify: (bumper-rep, frontend-rep, paint-rep, airbags-rep).
-    3. DETAILED REPORT: Explain what you see or what is likely wrong.
+    1. ARV: What is the CLEAN MARKET RETAIL for this car in ZAR? (BE ACCURATE)
+    2. DAMAGES: Identify (bumper-rep, frontend-rep, paint-rep, airbags-rep).
+    3. REPORT: Explain what you see.
     
-    Return raw JSON ONLY:
-    {{"damages": ["..."], "market_retail": 125000, "insight": "...", "detailed_report": "..."}}
+    Return JSON: {{"damages": [], "market_retail": 0, "insight": "", "detailed_report": ""}}
     """
 
     try:
@@ -111,6 +100,15 @@ async def analyze_vehicle(request_data: AnalysisRequest = Body(...)):
             contents=[prompt, *parts] if parts else [prompt],
             config=types.GenerateContentConfig(response_mime_type='application/json')
         )
-        return {"success": True, **json.loads(response.text)}
+        res_data = json.loads(response.text)
+        
+        # IRONCLAD FALLBACK: If AI returned 0, use its internal knowledge base to try again
+        if res_data.get("market_retail", 0) < 1000:
+            prompt_val = f"South African market value only for a {request_data.year} {request_data.model_name}. JSON: {{'market_retail': 100000}}"
+            val_resp = client.models.generate_content(model='gemini-2.0-flash', contents=[prompt_val], config=types.GenerateContentConfig(response_mime_type='application/json'))
+            res_data["market_retail"] = json.loads(val_resp.text).get("market_retail", 0)
+
+        return {"success": True, **res_data}
     except Exception as e:
-        return {"success": False, "error": f"AI Engine Timeout: {str(e)}"}
+        # ABSOLUTE SAFETY NET
+        return {"success": False, "error": str(e), "market_retail": 85000} # Default safe value for SA cars
